@@ -23,7 +23,7 @@ python3 ./examples/run_squad_max.py \
     --warmup_steps 500 \
     --max_seq_length 512 \
     --doc_stride 128 \
-    --output_dir ./output/models/albert_bioasq_max_beta2_98/ \
+    --output_dir ./output/models/albert_bioasq_max_beta2_98_from_scratch/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
