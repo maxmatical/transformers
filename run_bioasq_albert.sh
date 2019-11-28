@@ -3,7 +3,7 @@
 #SBATCH -c 2
 #SBATCH --gres=gpu:1
 #SBATCH -p nlp
-python3 examples/run_squad_max.py 
+python3 ./examples/run_squad_max.py \
     --model_type albert \
     --model_name_or_path albert-large-v2 \
     --do_train \
