@@ -18,9 +18,9 @@ python3 ./examples/run_squad_max.py \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
     --num_train_epochs 2 \
-    --max_steps 5000 \
+    --max_steps 8144 \
     --save_steps 500 \
-    --warmup_steps 500 \
+    --warmup_steps 814 \
     --max_seq_length 512 \
     --doc_stride 128 \
     --output_dir ./output/models/albert_squad_max_beta2_98/ \

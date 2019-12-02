@@ -7,8 +7,6 @@ python3 ./examples/run_squad_max.py \
     --model_type albert \
     --model_name_or_path albert-large-v2 \
     --do_train \
-    --do_eval \
-    --version_2_with_negative \
     --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
     --predict_file /scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json \
     --learning_rate 3e-5 \
@@ -28,3 +26,6 @@ python3 ./examples/run_squad_max.py \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
     --per_gpu_train_batch_size=3   \
+
+
+

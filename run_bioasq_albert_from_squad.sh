@@ -7,8 +7,6 @@ python3 ./examples/run_squad_max.py \
     --model_type albert \
     --model_name_or_path ./output/models/albert_squad_max_beta2_98/ \
     --do_train \
-    --do_eval \
-    --version_2_with_negative \
     --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
     --predict_file /scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json \
     --learning_rate 3e-5 \
