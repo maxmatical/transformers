@@ -9,6 +9,7 @@ python3 ./examples/run_squad_max.py \
     --do_train \
     --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
     --predict_file /scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json \
+    --fp16
     --learning_rate 3e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
