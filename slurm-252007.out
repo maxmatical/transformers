@@ -1,1097 +1,0 @@
-usage: run_squad_max.py [-h] --train_file TRAIN_FILE --predict_file
-                        PREDICT_FILE --model_type MODEL_TYPE
-                        --model_name_or_path MODEL_NAME_OR_PATH --output_dir
-                        OUTPUT_DIR [--config_name CONFIG_NAME]
-                        [--tokenizer_name TOKENIZER_NAME]
-                        [--cache_dir CACHE_DIR] [--version_2_with_negative]
-                        [--null_score_diff_threshold NULL_SCORE_DIFF_THRESHOLD]
-                        [--max_seq_length MAX_SEQ_LENGTH]
-                        [--doc_stride DOC_STRIDE]
-                        [--max_query_length MAX_QUERY_LENGTH] [--do_train]
-                        [--do_eval] [--evaluate_during_training]
-                        [--do_lower_case]
-                        [--per_gpu_train_batch_size PER_GPU_TRAIN_BATCH_SIZE]
-                        [--per_gpu_eval_batch_size PER_GPU_EVAL_BATCH_SIZE]
-                        [--learning_rate LEARNING_RATE]
-                        [--gradient_accumulation_steps GRADIENT_ACCUMULATION_STEPS]
-                        [--weight_decay WEIGHT_DECAY] [--beta1 BETA1]
-                        [--beta2 BETA2] [--adam_epsilon ADAM_EPSILON]
-                        [--max_grad_norm MAX_GRAD_NORM]
-                        [--num_train_epochs NUM_TRAIN_EPOCHS]
-                        [--max_steps MAX_STEPS] [--warmup_steps WARMUP_STEPS]
-                        [--n_best_size N_BEST_SIZE]
-                        [--max_answer_length MAX_ANSWER_LENGTH]
-                        [--verbose_logging] [--logging_steps LOGGING_STEPS]
-                        [--save_steps SAVE_STEPS] [--eval_all_checkpoints]
-                        [--no_cuda] [--overwrite_output_dir]
-                        [--overwrite_cache] [--seed SEED]
-                        [--local_rank LOCAL_RANK] [--fp16]
-                        [--fp16_opt_level FP16_OPT_LEVEL]
-                        [--server_ip SERVER_IP] [--server_port SERVER_PORT]
-                        [--lr_scheduler LR_SCHEDULER]
-run_squad_max.py: error: the following arguments are required: --train_file, --predict_file, --model_type, --model_name_or_path, --output_dir
-12/01/2019 18:13:40 - WARNING - __main__ -   Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
-12/01/2019 18:13:41 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-config.json from cache at /h/mtian/.cache/torch/transformers/4f6b2675253400aebc8ab1673ec27add127daf362af404ae81bfc57880c04d85.4e4ae0b75092dc73403e23e1652c47d6f6ab1993188fa8862fb72b943ba13157
-12/01/2019 18:13:41 - INFO - transformers.configuration_utils -   Model config {
-  "attention_probs_dropout_prob": 0.1,
-  "down_scale_factor": 1,
-  "embedding_size": 128,
-  "finetuning_task": null,
-  "gap_size": 0,
-  "hidden_act": "gelu",
-  "hidden_dropout_prob": 0.1,
-  "hidden_size": 1024,
-  "initializer_range": 0.02,
-  "inner_group_num": 1,
-  "intermediate_size": 4096,
-  "is_decoder": false,
-  "layer_norm_eps": 1e-12,
-  "max_position_embeddings": 512,
-  "net_structure_type": 0,
-  "num_attention_heads": 16,
-  "num_hidden_groups": 1,
-  "num_hidden_layers": 24,
-  "num_labels": 2,
-  "num_memory_blocks": 0,
-  "output_attentions": false,
-  "output_hidden_states": false,
-  "output_past": true,
-  "pruned_heads": {},
-  "torchscript": false,
-  "type_vocab_size": 2,
-  "use_bfloat16": false,
-  "vocab_size": 30000
-}
-
-12/01/2019 18:13:41 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-spiece.model from cache at /h/mtian/.cache/torch/transformers/6a228bf1ddec144cf2e94c6c762dfce1b721a082cf98437db1c62172bbd4d6c3.c81d4deb77aec08ce575b7a39a989a79dd54f321bfb82c2b54dd35f52f8182cf
-12/01/2019 18:13:41 - WARNING - transformers.modeling_utils -   There is currently an upstream reproducibility issue with ALBERT v2 models. Please see https://github.com/google-research/google-research/issues/119 for more information.
-12/01/2019 18:13:41 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/e6fd1be612c6797d1dc556e26724c9ed6ea0a45b79e3486533eccf9432a23ce6.857dc1dec4c7a7f2a7a0088f4139c2424ecc3d9a238f5c02de82f24a1eb69439
-12/01/2019 18:13:42 - INFO - transformers.modeling_utils -   Weights of AlbertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
-12/01/2019 18:13:42 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in AlbertForQuestionAnswering: ['predictions.bias', 'predictions.LayerNorm.weight', 'predictions.LayerNorm.bias', 'predictions.dense.weight', 'predictions.dense.bias', 'predictions.decoder.weight', 'predictions.decoder.bias']
-12/01/2019 18:13:42 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cpu'), do_eval=True, do_lower_case=False, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, learning_rate=3e-05, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=512, max_steps=5000, model_name_or_path='albert-large-v2', model_type='albert', n_best_size=20, n_gpu=0, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=2.0, output_dir='./output/models/albert_squad_max_beta2_98/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=3, per_gpu_train_batch_size=3, predict_file='/scratch/gobi1/mtian/SQUAD/dev-v2.0.json', save_steps=500, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/SQUAD/train-v2.0.json', verbose_logging=False, version_2_with_negative=True, warmup_steps=500, weight_decay=0.0)
-12/01/2019 18:13:42 - INFO - __main__ -   Loading features from cached file /scratch/gobi1/mtian/SQUAD/cached_train_albert-large-v2_512
-12/01/2019 18:14:10 - INFO - __main__ -   ***** Running training *****
-12/01/2019 18:14:10 - INFO - __main__ -     Num examples = 132998
-12/01/2019 18:14:10 - INFO - __main__ -     Num Epochs = 2
-12/01/2019 18:14:10 - INFO - __main__ -     Instantaneous batch size per GPU = 3
-12/01/2019 18:14:10 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 48
-12/01/2019 18:14:10 - INFO - __main__ -     Gradient Accumulation steps = 16
-12/01/2019 18:14:10 - INFO - __main__ -     Total optimization steps = 5000
-Epoch:   0%|          | 0/2 [00:00<?, ?it/s]
-Iteration:   0%|          | 0/44333 [00:00<?, ?it/s][A
-Iteration:   0%|          | 1/44333 [00:29<361:36:11, 29.36s/it][A
-Iteration:   0%|          | 2/44333 [01:14<421:10:32, 34.20s/it][A
-Iteration:   0%|          | 3/44333 [01:58<455:57:13, 37.03s/it][A
-Iteration:   0%|          | 4/44333 [02:46<497:47:22, 40.43s/it][A
-Iteration:   0%|          | 5/44333 [03:39<542:36:50, 44.07s/it][A
-Iteration:   0%|          | 6/44333 [04:39<603:24:21, 49.01s/it][A
-Iteration:   0%|          | 7/44333 [05:36<633:05:29, 51.42s/it][A
-Iteration:   0%|          | 8/44333 [06:34<656:20:44, 53.31s/it][A
-Iteration:   0%|          | 9/44333 [07:31<669:34:35, 54.38s/it][A
-Iteration:   0%|          | 10/44333 [08:26<672:34:33, 54.63s/it][A
-Iteration:   0%|          | 11/44333 [09:27<696:47:28, 56.60s/it][A
-Iteration:   0%|          | 12/44333 [10:25<701:20:59, 56.97s/it][A
-Iteration:   0%|          | 13/44333 [11:24<706:12:51, 57.36s/it][A
-Iteration:   0%|          | 14/44333 [12:23<714:10:24, 58.01s/it][A
-Iteration:   0%|          | 15/44333 [13:23<721:37:41, 58.62s/it][A
-Iteration:   0%|          | 16/44333 [14:24<730:47:16, 59.36s/it][A
-Iteration:   0%|          | 17/44333 [15:21<722:36:47, 58.70s/it][A
-Iteration:   0%|          | 18/44333 [16:19<719:16:13, 58.43s/it][A
-Iteration:   0%|          | 19/44333 [17:13<700:21:21, 56.90s/it][A
-Iteration:   0%|          | 20/44333 [18:07<690:31:52, 56.10s/it][A
-Iteration:   0%|          | 21/44333 [19:05<699:12:13, 56.80s/it][A
-Iteration:   0%|          | 22/44333 [19:59<686:55:22, 55.81s/it][A
-Iteration:   0%|          | 23/44333 [20:53<680:39:57, 55.30s/it][A
-Iteration:   0%|          | 24/44333 [21:42<658:42:32, 53.52s/it][A
-Iteration:   0%|          | 25/44333 [22:39<672:43:27, 54.66s/it][A
-Iteration:   0%|          | 26/44333 [23:33<667:18:02, 54.22s/it][A
-Iteration:   0%|          | 27/44333 [24:21<646:48:19, 52.55s/it][A
-Iteration:   0%|          | 28/44333 [25:16<654:04:15, 53.15s/it][A
-Iteration:   0%|          | 29/44333 [26:07<648:07:53, 52.67s/it][A
-Iteration:   0%|          | 30/44333 [26:59<643:13:33, 52.27s/it][A
-Iteration:   0%|          | 31/44333 [27:54<652:25:34, 53.02s/it][A
-Iteration:   0%|          | 32/44333 [28:45<648:09:26, 52.67s/it][A
-Iteration:   0%|          | 33/44333 [29:39<651:55:34, 52.98s/it][A
-Iteration:   0%|          | 34/44333 [30:31<646:56:09, 52.57s/it][A
-Iteration:   0%|          | 35/44333 [31:26<656:50:38, 53.38s/it][A
-Iteration:   0%|          | 36/44333 [32:18<652:01:35, 52.99s/it][A
-Iteration:   0%|          | 37/44333 [33:10<649:50:39, 52.81s/it][A
-Iteration:   0%|          | 38/44333 [34:07<665:05:27, 54.05s/it][A
-Iteration:   0%|          | 39/44333 [34:58<652:03:35, 53.00s/it][A
-Iteration:   0%|          | 40/44333 [35:51<651:47:27, 52.98s/it][A
-Iteration:   0%|          | 41/44333 [36:42<644:16:17, 52.37s/it][A
-Iteration:   0%|          | 42/44333 [37:33<639:25:09, 51.97s/it][A
-Iteration:   0%|          | 43/44333 [38:23<632:24:59, 51.40s/it][A
-Iteration:   0%|          | 44/44333 [39:15<635:00:24, 51.62s/it][A
-Iteration:   0%|          | 45/44333 [40:04<625:26:30, 50.84s/it][A
-Iteration:   0%|          | 46/44333 [40:55<625:26:25, 50.84s/it][A
-Iteration:   0%|          | 47/44333 [41:47<631:04:02, 51.30s/it][A
-Iteration:   0%|          | 48/44333 [42:38<628:46:28, 51.11s/it][A
-Iteration:   0%|          | 49/44333 [43:36<654:55:04, 53.24s/it][A
-Iteration:   0%|          | 50/44333 [44:33<669:42:38, 54.44s/it][A
-Iteration:   0%|          | 51/44333 [45:33<686:46:45, 55.83s/it][A
-Iteration:   0%|          | 52/44333 [46:26<676:54:32, 55.03s/it][A
-Iteration:   0%|          | 53/44333 [47:20<672:40:49, 54.69s/it][A
-Iteration:   0%|          | 54/44333 [48:09<651:44:49, 52.99s/it][A
-Iteration:   0%|          | 55/44333 [49:01<648:10:43, 52.70s/it][A
-Iteration:   0%|          | 56/44333 [49:51<640:03:51, 52.04s/it][A
-Iteration:   0%|          | 57/44333 [50:42<636:17:21, 51.74s/it][A
-Iteration:   0%|          | 58/44333 [51:37<646:00:15, 52.53s/it][A
-Iteration:   0%|          | 59/44333 [52:27<638:21:05, 51.91s/it][A
-Iteration:   0%|          | 60/44333 [53:17<632:34:02, 51.44s/it][A
-Iteration:   0%|          | 61/44333 [54:14<650:54:40, 52.93s/it][A
-Iteration:   0%|          | 62/44333 [55:05<645:19:45, 52.48s/it][A
-Iteration:   0%|          | 63/44333 [55:54<631:22:35, 51.34s/it][A
-Iteration:   0%|          | 64/44333 [56:44<626:53:31, 50.98s/it][A
-Iteration:   0%|          | 65/44333 [57:36<631:23:39, 51.35s/it][A
-Iteration:   0%|          | 66/44333 [58:33<650:06:03, 52.87s/it][A
-Iteration:   0%|          | 67/44333 [59:27<657:32:57, 53.48s/it][A
-Iteration:   0%|          | 68/44333 [1:00:19<650:36:59, 52.91s/it][A
-Iteration:   0%|          | 69/44333 [1:01:13<656:00:04, 53.35s/it][A
-Iteration:   0%|          | 70/44333 [1:02:07<657:48:38, 53.50s/it][A
-Iteration:   0%|          | 71/44333 [1:02:58<648:54:18, 52.78s/it][A
-Iteration:   0%|          | 72/44333 [1:03:49<640:08:08, 52.07s/it][A
-Iteration:   0%|          | 73/44333 [1:04:43<647:52:23, 52.70s/it][A
-Iteration:   0%|          | 74/44333 [1:05:36<647:32:16, 52.67s/it][A
-Iteration:   0%|          | 75/44333 [1:06:24<633:05:57, 51.50s/it][A
-Iteration:   0%|          | 76/44333 [1:07:19<644:15:41, 52.41s/it][A
-Iteration:   0%|          | 77/44333 [1:08:09<636:38:30, 51.79s/it][A
-Iteration:   0%|          | 78/44333 [1:08:59<628:10:47, 51.10s/it][A
-Iteration:   0%|          | 79/44333 [1:09:50<627:54:28, 51.08s/it][A
-Iteration:   0%|          | 80/44333 [1:10:45<642:24:55, 52.26s/it][A
-Iteration:   0%|          | 81/44333 [1:11:42<658:59:17, 53.61s/it][A
-Iteration:   0%|          | 82/44333 [1:12:37<664:32:17, 54.06s/it][A
-Iteration:   0%|          | 83/44333 [1:13:31<666:26:52, 54.22s/it][A
-Iteration:   0%|          | 84/44333 [1:14:24<661:48:42, 53.84s/it][A
-Iteration:   0%|          | 85/44333 [1:15:21<671:14:18, 54.61s/it][A
-Iteration:   0%|          | 86/44333 [1:16:13<663:39:37, 54.00s/it][A
-Iteration:   0%|          | 87/44333 [1:17:07<663:33:47, 53.99s/it][A
-Iteration:   0%|          | 88/44333 [1:18:00<658:01:04, 53.54s/it][A
-Iteration:   0%|          | 89/44333 [1:18:55<665:00:46, 54.11s/it][A
-Iteration:   0%|          | 90/44333 [1:19:48<659:08:57, 53.63s/it][A
-Iteration:   0%|          | 91/44333 [1:20:39<649:54:51, 52.88s/it][A
-Iteration:   0%|          | 92/44333 [1:21:30<645:38:37, 52.54s/it][A
-Iteration:   0%|          | 93/44333 [1:22:25<651:26:29, 53.01s/it][A
-Iteration:   0%|          | 94/44333 [1:23:23<673:15:04, 54.79s/it][A
-Iteration:   0%|          | 95/44333 [1:24:20<680:22:03, 55.37s/it][A
-Iteration:   0%|          | 96/44333 [1:25:16<683:26:13, 55.62s/it][A
-Iteration:   0%|          | 97/44333 [1:26:13<686:22:14, 55.86s/it][A
-Iteration:   0%|          | 98/44333 [1:27:07<680:45:42, 55.40s/it][A
-Iteration:   0%|          | 99/44333 [1:28:01<675:56:51, 55.01s/it][A
-Iteration:   0%|          | 100/44333 [1:28:56<676:18:16, 55.04s/it][A
-Iteration:   0%|          | 101/44333 [1:29:50<671:19:54, 54.64s/it][A
-Iteration:   0%|          | 102/44333 [1:30:47<679:02:54, 55.27s/it][A
-Iteration:   0%|          | 103/44333 [1:31:47<696:33:24, 56.69s/it][A
-Iteration:   0%|          | 104/44333 [1:32:38<675:51:23, 55.01s/it][A
-Iteration:   0%|          | 105/44333 [1:33:29<660:06:49, 53.73s/it][A
-Iteration:   0%|          | 106/44333 [1:34:28<681:12:45, 55.45s/it][A
-Iteration:   0%|          | 107/44333 [1:35:23<677:24:07, 55.14s/it][A
-Iteration:   0%|          | 108/44333 [1:36:18<680:21:02, 55.38s/it][A
-Iteration:   0%|          | 109/44333 [1:37:15<683:10:22, 55.61s/it][A
-Iteration:   0%|          | 110/44333 [1:38:07<671:39:39, 54.68s/it][A
-Iteration:   0%|          | 111/44333 [1:38:59<660:45:42, 53.79s/it][A
-Iteration:   0%|          | 112/44333 [1:39:52<660:09:16, 53.74s/it][A
-Iteration:   0%|          | 113/44333 [1:40:50<674:14:31, 54.89s/it][A
-Iteration:   0%|          | 114/44333 [1:41:45<675:00:39, 54.95s/it][A
-Iteration:   0%|          | 115/44333 [1:42:43<686:56:50, 55.93s/it][A
-Iteration:   0%|          | 116/44333 [1:43:36<675:30:34, 55.00s/it][A
-Iteration:   0%|          | 117/44333 [1:44:28<663:33:46, 54.03s/it][A
-Iteration:   0%|          | 118/44333 [1:45:20<656:21:18, 53.44s/it][A
-Iteration:   0%|          | 119/44333 [1:46:14<657:45:45, 53.56s/it][A
-Iteration:   0%|          | 120/44333 [1:47:06<652:59:28, 53.17s/it][A
-Iteration:   0%|          | 121/44333 [1:48:01<658:50:32, 53.65s/it][A
-Iteration:   0%|          | 122/44333 [1:48:53<653:56:51, 53.25s/it][A
-Iteration:   0%|          | 123/44333 [1:49:47<654:48:22, 53.32s/it][A
-Iteration:   0%|          | 124/44333 [1:50:42<661:48:34, 53.89s/it][A
-Iteration:   0%|          | 125/44333 [1:51:38<668:05:20, 54.40s/it][A
-Iteration:   0%|          | 126/44333 [1:52:30<659:28:09, 53.70s/it][A
-Iteration:   0%|          | 127/44333 [1:53:23<656:58:06, 53.50s/it][A
-Iteration:   0%|          | 128/44333 [1:54:17<661:46:10, 53.89s/it][A
-Iteration:   0%|          | 129/44333 [1:55:15<673:45:47, 54.87s/it][A
-Iteration:   0%|          | 130/44333 [1:56:10<677:01:11, 55.14s/it][A
-Iteration:   0%|          | 131/44333 [1:57:07<681:04:35, 55.47s/it][A
-Iteration:   0%|          | 132/44333 [1:58:00<675:18:01, 55.00s/it][A
-Iteration:   0%|          | 133/44333 [1:58:55<675:12:54, 54.99s/it][A
-Iteration:   0%|          | 134/44333 [1:59:50<674:59:58, 54.98s/it][A
-Iteration:   0%|          | 135/44333 [2:00:50<692:13:05, 56.38s/it][A
-Iteration:   0%|          | 136/44333 [2:01:44<683:31:53, 55.68s/it][A
-Iteration:   0%|          | 137/44333 [2:02:38<675:49:10, 55.05s/it][A
-Iteration:   0%|          | 138/44333 [2:03:29<660:23:29, 53.79s/it][A
-Iteration:   0%|          | 139/44333 [2:04:20<652:18:02, 53.14s/it][A
-Iteration:   0%|          | 140/44333 [2:05:09<636:08:53, 51.82s/it][A
-Iteration:   0%|          | 141/44333 [2:06:03<645:02:02, 52.55s/it][A
-Iteration:   0%|          | 142/44333 [2:06:54<637:42:32, 51.95s/it][A
-Iteration:   0%|          | 143/44333 [2:07:42<624:20:03, 50.86s/it][A
-Iteration:   0%|          | 144/44333 [2:08:37<637:54:30, 51.97s/it][A
-Iteration:   0%|          | 145/44333 [2:09:28<634:47:08, 51.72s/it][A
-Iteration:   0%|          | 146/44333 [2:10:21<639:31:06, 52.10s/it][A
-Iteration:   0%|          | 147/44333 [2:11:11<631:24:24, 51.44s/it][A
-Iteration:   0%|          | 148/44333 [2:12:04<638:52:15, 52.05s/it][A
-Iteration:   0%|          | 149/44333 [2:12:53<626:41:28, 51.06s/it][A
-Iteration:   0%|          | 150/44333 [2:13:44<628:28:26, 51.21s/it][A
-Iteration:   0%|          | 151/44333 [2:14:46<668:25:08, 54.46s/it][A
-Iteration:   0%|          | 152/44333 [2:15:39<661:35:56, 53.91s/it][A
-Iteration:   0%|          | 153/44333 [2:16:36<674:27:05, 54.96s/it][A
-Iteration:   0%|          | 154/44333 [2:17:33<681:22:28, 55.52s/it][A
-Iteration:   0%|          | 155/44333 [2:18:30<685:24:29, 55.85s/it][A
-Iteration:   0%|          | 156/44333 [2:19:23<674:31:18, 54.97s/it][A
-Iteration:   0%|          | 157/44333 [2:20:19<679:53:29, 55.41s/it][A
-Iteration:   0%|          | 158/44333 [2:21:11<665:06:55, 54.20s/it][A
-Iteration:   0%|          | 159/44333 [2:22:03<658:12:05, 53.64s/it][A
-Iteration:   0%|          | 160/44333 [2:22:58<662:31:06, 53.99s/it][A
-Iteration:   0%|          | 161/44333 [2:23:54<672:03:04, 54.77s/it][A
-Iteration:   0%|          | 162/44333 [2:24:52<681:15:32, 55.52s/it][A
-Iteration:   0%|          | 163/44333 [2:25:47<679:18:50, 55.37s/it][A
-Iteration:   0%|          | 164/44333 [2:26:35<654:37:53, 53.36s/it][A
-Iteration:   0%|          | 165/44333 [2:27:27<650:09:30, 52.99s/it][A
-Iteration:   0%|          | 166/44333 [2:28:21<651:19:45, 53.09s/it][A
-Iteration:   0%|          | 167/44333 [2:29:15<656:34:19, 53.52s/it][A
-Iteration:   0%|          | 168/44333 [2:30:06<646:20:55, 52.69s/it][A
-Iteration:   0%|          | 169/44333 [2:30:55<632:34:48, 51.56s/it][A
-Iteration:   0%|          | 170/44333 [2:31:47<634:58:52, 51.76s/it][A
-Iteration:   0%|          | 171/44333 [2:32:37<628:00:30, 51.19s/it][A
-Iteration:   0%|          | 172/44333 [2:33:29<630:36:20, 51.41s/it][A
-Iteration:   0%|          | 173/44333 [2:34:22<634:48:10, 51.75s/it][A
-Iteration:   0%|          | 174/44333 [2:35:16<643:18:49, 52.45s/it][A
-Iteration:   0%|          | 175/44333 [2:36:13<660:38:05, 53.86s/it][A
-Iteration:   0%|          | 176/44333 [2:37:11<676:54:10, 55.19s/it][A
-Iteration:   0%|          | 177/44333 [2:38:08<683:41:24, 55.74s/it][A
-Iteration:   0%|          | 178/44333 [2:39:09<702:06:36, 57.24s/it][A
-Iteration:   0%|          | 179/44333 [2:40:03<692:28:42, 56.46s/it][A
-Iteration:   0%|          | 180/44333 [2:40:53<667:52:34, 54.46s/it][A
-Iteration:   0%|          | 181/44333 [2:41:49<672:19:47, 54.82s/it][A
-Iteration:   0%|          | 182/44333 [2:42:46<681:36:52, 55.58s/it][A
-Iteration:   0%|          | 183/44333 [2:43:44<688:36:29, 56.15s/it][A
-Iteration:   0%|          | 184/44333 [2:44:41<691:51:28, 56.42s/it][A
-Iteration:   0%|          | 185/44333 [2:45:46<724:01:25, 59.04s/it][A
-Iteration:   0%|          | 186/44333 [2:46:41<708:45:22, 57.80s/it][A
-Iteration:   0%|          | 187/44333 [2:47:33<687:32:57, 56.07s/it][A
-Iteration:   0%|          | 188/44333 [2:48:29<686:53:46, 56.02s/it][A
-Iteration:   0%|          | 189/44333 [2:49:26<692:32:46, 56.48s/it][A
-Iteration:   0%|          | 190/44333 [2:50:27<707:11:16, 57.67s/it][A
-Iteration:   0%|          | 191/44333 [2:51:19<685:45:28, 55.93s/it][A
-Iteration:   0%|          | 192/44333 [2:52:14<684:16:28, 55.81s/it][A
-Iteration:   0%|          | 193/44333 [2:53:12<691:04:58, 56.36s/it][A
-Iteration:   0%|          | 194/44333 [2:54:10<696:21:54, 56.80s/it][A
-Iteration:   0%|          | 195/44333 [2:55:03<685:35:33, 55.92s/it][A
-Iteration:   0%|          | 196/44333 [2:56:00<686:02:10, 55.96s/it][A
-Iteration:   0%|          | 197/44333 [2:56:54<679:18:30, 55.41s/it][A
-Iteration:   0%|          | 198/44333 [2:57:47<671:47:16, 54.80s/it][A
-Iteration:   0%|          | 199/44333 [2:58:42<671:41:02, 54.79s/it][A
-Iteration:   0%|          | 200/44333 [2:59:33<659:36:19, 53.81s/it][A
-Iteration:   0%|          | 201/44333 [3:00:29<665:08:03, 54.26s/it][A
-Iteration:   0%|          | 202/44333 [3:01:25<673:50:33, 54.97s/it][A
-Iteration:   0%|          | 203/44333 [3:02:21<675:31:47, 55.11s/it][A
-Iteration:   0%|          | 204/44333 [3:03:12<661:54:47, 54.00s/it][A
-Iteration:   0%|          | 205/44333 [3:04:11<680:17:39, 55.50s/it][A
-Iteration:   0%|          | 206/44333 [3:05:06<678:08:09, 55.32s/it][A
-Iteration:   0%|          | 207/44333 [3:06:01<677:53:28, 55.31s/it][A
-Iteration:   0%|          | 208/44333 [3:07:00<689:13:16, 56.23s/it][A
-Iteration:   0%|          | 209/44333 [3:07:59<699:01:31, 57.03s/it][A
-Iteration:   0%|          | 210/44333 [3:08:56<701:36:53, 57.24s/it][A
-Iteration:   0%|          | 211/44333 [3:09:53<700:42:45, 57.17s/it][A
-Iteration:   0%|          | 212/44333 [3:10:51<702:08:02, 57.29s/it][A
-Iteration:   0%|          | 213/44333 [3:11:43<683:42:40, 55.79s/it][A
-Iteration:   0%|          | 214/44333 [3:12:39<685:04:20, 55.90s/it][A
-Iteration:   0%|          | 215/44333 [3:13:33<675:26:14, 55.12s/it][A
-Iteration:   0%|          | 216/44333 [3:14:26<668:49:02, 54.58s/it][A
-Iteration:   0%|          | 217/44333 [3:15:20<667:15:25, 54.45s/it][A
-Iteration:   0%|          | 218/44333 [3:16:11<655:09:15, 53.46s/it][A
-Iteration:   0%|          | 219/44333 [3:17:04<653:10:44, 53.30s/it][A
-Iteration:   0%|          | 220/44333 [3:17:58<654:47:21, 53.44s/it][A
-Iteration:   0%|          | 221/44333 [3:18:53<659:24:41, 53.81s/it][A
-Iteration:   1%|          | 222/44333 [3:19:43<646:40:48, 52.78s/it][A
-Iteration:   1%|          | 223/44333 [3:20:40<662:58:33, 54.11s/it][A
-Iteration:   1%|          | 224/44333 [3:21:35<664:01:57, 54.20s/it][A
-Iteration:   1%|          | 225/44333 [3:22:35<685:19:12, 55.93s/it][A
-Iteration:   1%|          | 226/44333 [3:23:31<686:13:30, 56.01s/it][A
-Iteration:   1%|          | 227/44333 [3:24:31<703:00:34, 57.38s/it][A
-Iteration:   1%|          | 228/44333 [3:25:24<685:37:35, 55.96s/it][A
-Iteration:   1%|          | 229/44333 [3:26:23<698:19:23, 57.00s/it][A
-Iteration:   1%|          | 230/44333 [3:27:18<688:59:21, 56.24s/it][A
-Iteration:   1%|          | 231/44333 [3:28:14<688:45:31, 56.22s/it][A
-Iteration:   1%|          | 232/44333 [3:29:07<675:20:51, 55.13s/it][A
-Iteration:   1%|          | 233/44333 [3:29:58<662:59:50, 54.12s/it][A
-Iteration:   1%|          | 234/44333 [3:30:53<663:55:15, 54.20s/it][A
-Iteration:   1%|          | 235/44333 [3:31:48<667:47:22, 54.52s/it][A
-Iteration:   1%|          | 236/44333 [3:32:42<666:31:31, 54.41s/it][A
-Iteration:   1%|          | 237/44333 [3:33:38<670:58:52, 54.78s/it][A
-Iteration:   1%|          | 238/44333 [3:34:37<688:09:02, 56.18s/it][A
-Iteration:   1%|          | 239/44333 [3:35:30<674:52:00, 55.10s/it][A
-Iteration:   1%|          | 240/44333 [3:36:24<669:41:51, 54.68s/it][A
-Iteration:   1%|          | 241/44333 [3:37:17<666:18:59, 54.40s/it][A
-Iteration:   1%|          | 242/44333 [3:38:16<680:10:37, 55.54s/it][A
-Iteration:   1%|          | 243/44333 [3:39:10<674:35:52, 55.08s/it][A
-Iteration:   1%|          | 244/44333 [3:39:58<651:13:43, 53.17s/it][A
-Iteration:   1%|          | 245/44333 [3:40:47<634:32:47, 51.81s/it][A
-Iteration:   1%|          | 246/44333 [3:41:36<626:00:44, 51.12s/it][A
-Iteration:   1%|          | 247/44333 [3:42:30<636:13:54, 51.95s/it][A
-Iteration:   1%|          | 248/44333 [3:43:20<628:23:21, 51.31s/it][A
-Iteration:   1%|          | 249/44333 [3:44:08<616:39:39, 50.36s/it][A
-Iteration:   1%|          | 250/44333 [3:44:59<617:16:51, 50.41s/it][A
-Iteration:   1%|          | 251/44333 [3:45:52<628:28:53, 51.33s/it][A
-Iteration:   1%|          | 252/44333 [3:46:44<630:03:15, 51.46s/it][A
-Iteration:   1%|          | 253/44333 [3:47:38<639:15:28, 52.21s/it][A
-Iteration:   1%|          | 254/44333 [3:48:32<644:25:06, 52.63s/it][A
-Iteration:   1%|          | 255/44333 [3:49:23<640:50:28, 52.34s/it][A
-Iteration:   1%|          | 256/44333 [3:50:20<657:55:42, 53.74s/it][A
-Iteration:   1%|          | 257/44333 [3:51:12<651:04:06, 53.18s/it][A
-Iteration:   1%|          | 258/44333 [3:52:07<656:40:59, 53.64s/it][A
-Iteration:   1%|          | 259/44333 [3:53:00<654:20:35, 53.45s/it][A
-Iteration:   1%|          | 260/44333 [3:53:57<667:41:48, 54.54s/it][A
-Iteration:   1%|          | 261/44333 [3:54:50<661:01:21, 54.00s/it][A
-Iteration:   1%|          | 262/44333 [3:55:48<677:41:50, 55.36s/it][A
-Iteration:   1%|          | 263/44333 [3:56:45<683:20:56, 55.82s/it][A
-Iteration:   1%|          | 264/44333 [3:57:46<701:46:12, 57.33s/it][A
-Iteration:   1%|          | 265/44333 [3:58:47<714:24:55, 58.36s/it][A
-Iteration:   1%|          | 266/44333 [3:59:43<705:46:21, 57.66s/it][A
-Iteration:   1%|          | 267/44333 [4:00:40<705:16:41, 57.62s/it][A
-Iteration:   1%|          | 268/44333 [4:01:43<723:12:03, 59.08s/it][A
-Iteration:   1%|          | 269/44333 [4:02:42<724:15:41, 59.17s/it][A
-Iteration:   1%|          | 270/44333 [4:03:38<712:32:35, 58.22s/it][A
-Iteration:   1%|          | 271/44333 [4:04:37<713:59:20, 58.34s/it][A
-Iteration:   1%|          | 272/44333 [4:05:41<736:04:39, 60.14s/it][A
-Iteration:   1%|          | 273/44333 [4:06:40<731:59:57, 59.81s/it][A
-Iteration:   1%|          | 274/44333 [4:07:39<727:20:37, 59.43s/it][A
-Iteration:   1%|          | 275/44333 [4:08:37<722:22:03, 59.03s/it][A
-Iteration:   1%|          | 276/44333 [4:09:31<704:13:47, 57.54s/it][A
-Iteration:   1%|          | 277/44333 [4:10:23<682:55:34, 55.80s/it][A
-Iteration:   1%|          | 278/44333 [4:11:15<671:08:32, 54.84s/it][A
-Iteration:   1%|          | 279/44333 [4:12:06<656:30:25, 53.65s/it][A
-Iteration:   1%|          | 280/44333 [4:13:01<661:05:21, 54.02s/it][A
-Iteration:   1%|          | 281/44333 [4:13:57<668:15:37, 54.61s/it][A
-Iteration:   1%|          | 282/44333 [4:14:54<675:40:09, 55.22s/it][A
-Iteration:   1%|          | 283/44333 [4:15:48<673:18:42, 55.03s/it][A
-Iteration:   1%|          | 284/44333 [4:16:47<686:53:28, 56.14s/it][A
-Iteration:   1%|          | 285/44333 [4:17:40<677:32:00, 55.37s/it][A
-Iteration:   1%|          | 286/44333 [4:18:37<680:16:06, 55.60s/it][A
-Iteration:   1%|          | 287/44333 [4:19:30<671:10:42, 54.86s/it][A
-Iteration:   1%|          | 288/44333 [4:20:30<690:14:12, 56.42s/it][A
-Iteration:   1%|          | 289/44333 [4:21:31<709:45:10, 58.01s/it][A
-Iteration:   1%|          | 290/44333 [4:22:27<700:37:51, 57.27s/it][A
-Iteration:   1%|          | 291/44333 [4:23:23<697:02:17, 56.98s/it][A
-Iteration:   1%|          | 292/44333 [4:24:21<698:13:55, 57.07s/it][A
-Iteration:   1%|          | 293/44333 [4:25:19<704:29:25, 57.59s/it][A
-Iteration:   1%|          | 294/44333 [4:26:17<704:45:26, 57.61s/it][A
-Iteration:   1%|          | 295/44333 [4:27:14<702:32:25, 57.43s/it][A
-Iteration:   1%|          | 296/44333 [4:28:11<700:20:58, 57.25s/it][A
-Iteration:   1%|          | 297/44333 [4:29:08<699:57:20, 57.22s/it][A
-Iteration:   1%|          | 298/44333 [4:30:02<689:28:55, 56.37s/it][A
-Iteration:   1%|          | 299/44333 [4:30:59<688:37:43, 56.30s/it][A
-Iteration:   1%|          | 300/44333 [4:31:51<674:04:31, 55.11s/it][A
-Iteration:   1%|          | 301/44333 [4:32:46<674:34:43, 55.15s/it][A
-Iteration:   1%|          | 302/44333 [4:33:40<668:52:38, 54.69s/it][A
-Iteration:   1%|          | 303/44333 [4:34:36<674:34:13, 55.15s/it][A
-Iteration:   1%|          | 304/44333 [4:35:34<684:28:58, 55.97s/it][A
-Iteration:   1%|          | 305/44333 [4:36:33<694:15:03, 56.77s/it][A
-Iteration:   1%|          | 306/44333 [4:37:31<700:17:39, 57.26s/it][A
-Iteration:   1%|          | 307/44333 [4:38:25<688:50:48, 56.33s/it][A
-Iteration:   1%|          | 308/44333 [4:39:27<708:03:50, 57.90s/it][A
-Iteration:   1%|          | 309/44333 [4:40:17<681:48:16, 55.75s/it][A
-Iteration:   1%|          | 310/44333 [4:41:16<693:15:37, 56.69s/it][A
-Iteration:   1%|          | 311/44333 [4:42:15<699:40:51, 57.22s/it][A
-Iteration:   1%|          | 312/44333 [4:43:15<710:26:23, 58.10s/it][A
-Iteration:   1%|          | 313/44333 [4:44:14<712:25:55, 58.26s/it][A
-Iteration:   1%|          | 314/44333 [4:45:13<715:20:08, 58.50s/it][A
-Iteration:   1%|          | 315/44333 [4:46:07<699:04:07, 57.17s/it][A
-Iteration:   1%|          | 316/44333 [4:47:04<699:54:23, 57.24s/it][A
-Iteration:   1%|          | 317/44333 [4:47:57<682:28:02, 55.82s/it][A
-Iteration:   1%|          | 318/44333 [4:48:59<705:44:35, 57.72s/it][A
-Iteration:   1%|          | 319/44333 [4:49:53<692:29:42, 56.64s/it][A
-Iteration:   1%|          | 320/44333 [4:50:53<704:10:37, 57.60s/it][A
-Iteration:   1%|          | 321/44333 [4:51:50<701:26:10, 57.37s/it][A
-Iteration:   1%|          | 322/44333 [4:52:56<733:43:33, 60.02s/it][A
-Iteration:   1%|          | 323/44333 [4:53:54<729:06:28, 59.64s/it][A
-Iteration:   1%|          | 324/44333 [4:54:53<724:18:10, 59.25s/it][A
-Iteration:   1%|          | 325/44333 [4:55:51<720:24:24, 58.93s/it][A
-Iteration:   1%|          | 326/44333 [4:56:53<730:54:37, 59.79s/it][A
-Iteration:   1%|          | 327/44333 [4:57:51<726:40:36, 59.45s/it][A
-Iteration:   1%|          | 328/44333 [4:58:51<727:18:51, 59.50s/it][A
-Iteration:   1%|          | 329/44333 [4:59:52<732:36:46, 59.94s/it][A
-Iteration:   1%|          | 330/44333 [5:00:51<727:30:06, 59.52s/it][A
-Iteration:   1%|          | 331/44333 [5:01:46<712:09:04, 58.26s/it][A
-Iteration:   1%|          | 332/44333 [5:02:48<726:15:21, 59.42s/it][A
-Iteration:   1%|          | 333/44333 [5:03:43<708:36:19, 57.98s/it][A
-Iteration:   1%|          | 334/44333 [5:04:41<709:38:40, 58.06s/it][A
-Iteration:   1%|          | 335/44333 [5:05:36<700:31:37, 57.32s/it][A
-Iteration:   1%|          | 336/44333 [5:06:39<720:29:27, 58.95s/it][A
-Iteration:   1%|          | 337/44333 [5:07:37<717:22:10, 58.70s/it][A
-Iteration:   1%|          | 338/44333 [5:08:38<726:08:26, 59.42s/it][A
-Iteration:   1%|          | 339/44333 [5:09:32<702:55:37, 57.52s/it][A
-Iteration:   1%|          | 340/44333 [5:10:29<703:58:47, 57.61s/it][A
-Iteration:   1%|          | 341/44333 [5:11:26<701:44:14, 57.43s/it][A
-Iteration:   1%|          | 342/44333 [5:12:26<709:59:40, 58.10s/it][A
-Iteration:   1%|          | 343/44333 [5:13:24<708:51:01, 58.01s/it][A
-Iteration:   1%|          | 344/44333 [5:14:21<705:55:09, 57.77s/it][A
-Iteration:   1%|          | 345/44333 [5:15:16<695:12:07, 56.90s/it][A
-Iteration:   1%|          | 346/44333 [5:16:15<703:57:53, 57.61s/it][A
-Iteration:   1%|          | 347/44333 [5:17:11<696:39:54, 57.02s/it][A
-Iteration:   1%|          | 348/44333 [5:18:04<683:45:46, 55.96s/it][A
-Iteration:   1%|          | 349/44333 [5:19:12<725:52:37, 59.41s/it][A
-Iteration:   1%|          | 350/44333 [5:20:04<699:52:57, 57.29s/it][A
-Iteration:   1%|          | 351/44333 [5:20:59<691:45:36, 56.62s/it][A
-Iteration:   1%|          | 352/44333 [5:21:55<687:58:13, 56.31s/it][A
-Iteration:   1%|          | 353/44333 [5:23:07<746:19:24, 61.09s/it][A
-Iteration:   1%|          | 354/44333 [5:24:06<736:56:03, 60.32s/it][A
-Iteration:   1%|          | 355/44333 [5:25:04<728:38:36, 59.65s/it][A
-Iteration:   1%|          | 356/44333 [5:25:58<710:40:15, 58.18s/it][A
-Iteration:   1%|          | 357/44333 [5:26:56<708:38:43, 58.01s/it][A
-Iteration:   1%|          | 358/44333 [5:27:56<717:04:59, 58.70s/it][A
-Iteration:   1%|          | 359/44333 [5:28:56<720:49:29, 59.01s/it][A
-Iteration:   1%|          | 360/44333 [5:29:55<719:10:00, 58.88s/it][A
-Iteration:   1%|          | 361/44333 [5:30:55<724:12:31, 59.29s/it][A
-Iteration:   1%|          | 362/44333 [5:31:57<734:34:18, 60.14s/it][A
-Iteration:   1%|          | 363/44333 [5:32:55<725:59:06, 59.44s/it][A
-Iteration:   1%|          | 364/44333 [5:33:57<736:39:37, 60.31s/it][A
-Iteration:   1%|          | 365/44333 [5:34:55<728:50:30, 59.68s/it][A
-Iteration:   1%|          | 366/44333 [5:35:54<724:55:18, 59.36s/it][A
-Iteration:   1%|          | 367/44333 [5:36:51<715:05:43, 58.55s/it][A
-Iteration:   1%|          | 368/44333 [5:37:53<729:04:35, 59.70s/it][A
-Iteration:   1%|          | 369/44333 [5:38:53<730:00:18, 59.78s/it][A
-Iteration:   1%|          | 370/44333 [5:39:53<732:42:59, 60.00s/it][A
-Iteration:   1%|          | 371/44333 [5:40:48<712:52:25, 58.38s/it][A
-Iteration:   1%|          | 372/44333 [5:41:49<723:52:36, 59.28s/it][A
-Iteration:   1%|          | 373/44333 [5:42:46<712:25:12, 58.34s/it][A
-Iteration:   1%|          | 374/44333 [5:43:46<720:46:54, 59.03s/it][A
-Iteration:   1%|          | 375/44333 [5:44:37<690:43:09, 56.57s/it][A
-Iteration:   1%|          | 376/44333 [5:45:36<700:57:50, 57.41s/it][A
-Iteration:   1%|          | 377/44333 [5:46:36<708:23:03, 58.02s/it][A
-Iteration:   1%|          | 378/44333 [5:47:32<701:34:07, 57.46s/it][A
-Iteration:   1%|          | 379/44333 [5:48:27<691:01:32, 56.60s/it][A
-Iteration:   1%|          | 380/44333 [5:49:24<695:34:00, 56.97s/it][A
-Iteration:   1%|          | 381/44333 [5:50:21<693:18:39, 56.79s/it][A
-Iteration:   1%|          | 382/44333 [5:51:18<694:07:08, 56.85s/it][A
-Iteration:   1%|          | 383/44333 [5:52:26<735:40:55, 60.26s/it][A
-Iteration:   1%|          | 384/44333 [5:53:24<727:41:40, 59.61s/it][A
-Iteration:   1%|          | 385/44333 [5:54:19<711:26:13, 58.28s/it][A
-Iteration:   1%|          | 386/44333 [5:55:15<700:46:41, 57.41s/it][A
-Iteration:   1%|          | 387/44333 [5:56:12<700:35:25, 57.39s/it][A
-Iteration:   1%|          | 388/44333 [5:57:08<696:11:04, 57.03s/it][A
-Iteration:   1%|          | 389/44333 [5:58:09<709:24:55, 58.12s/it][A
-Iteration:   1%|          | 390/44333 [5:59:03<695:07:17, 56.95s/it][A
-Iteration:   1%|          | 391/44333 [6:00:02<704:13:47, 57.69s/it][A
-Iteration:   1%|          | 392/44333 [6:01:01<705:23:48, 57.79s/it][A
-Iteration:   1%|          | 393/44333 [6:01:55<692:27:12, 56.73s/it][A
-Iteration:   1%|          | 394/44333 [6:02:47<676:22:29, 55.42s/it][A
-Iteration:   1%|          | 395/44333 [6:03:46<687:32:42, 56.33s/it][A
-Iteration:   1%|          | 396/44333 [6:04:43<693:19:24, 56.81s/it][A
-Iteration:   1%|          | 397/44333 [6:05:34<671:38:18, 55.03s/it][A
-Iteration:   1%|          | 398/44333 [6:06:31<678:41:46, 55.61s/it][A
-Iteration:   1%|          | 399/44333 [6:08:33<918:52:00, 75.29s/it][A
-Iteration:   1%|          | 400/44333 [6:09:32<860:01:48, 70.47s/it][A
-Iteration:   1%|          | 401/44333 [6:10:27<802:28:23, 65.76s/it][A
-Iteration:   1%|          | 402/44333 [6:11:23<770:10:46, 63.11s/it][A
-Iteration:   1%|          | 403/44333 [6:12:16<731:43:08, 59.96s/it][A
-Iteration:   1%|          | 404/44333 [6:13:14<725:43:55, 59.47s/it][A
-Iteration:   1%|          | 405/44333 [6:14:08<704:21:26, 57.72s/it][A
-Iteration:   1%|          | 406/44333 [6:15:07<709:24:50, 58.14s/it][A
-Iteration:   1%|          | 407/44333 [6:15:59<687:07:14, 56.31s/it][A
-Iteration:   1%|          | 408/44333 [6:16:53<679:34:10, 55.70s/it][A
-Iteration:   1%|          | 409/44333 [6:17:46<669:16:32, 54.85s/it][A
-Iteration:   1%|          | 410/44333 [6:18:43<674:37:20, 55.29s/it][A
-Iteration:   1%|          | 411/44333 [6:19:35<664:58:14, 54.50s/it][A
-Iteration:   1%|          | 412/44333 [6:20:32<671:58:30, 55.08s/it][A
-Iteration:   1%|          | 413/44333 [6:21:29<680:54:11, 55.81s/it][A
-Iteration:   1%|          | 414/44333 [6:22:25<679:25:33, 55.69s/it][A
-Iteration:   1%|          | 415/44333 [6:23:17<667:44:31, 54.74s/it][A
-Iteration:   1%|          | 416/44333 [6:24:16<683:39:18, 56.04s/it][A
-Iteration:   1%|          | 417/44333 [6:25:08<668:18:20, 54.78s/it][A
-Iteration:   1%|          | 418/44333 [6:26:09<689:09:43, 56.50s/it][A
-Iteration:   1%|          | 419/44333 [6:27:03<681:21:26, 55.86s/it][A
-Iteration:   1%|          | 420/44333 [6:27:55<666:37:04, 54.65s/it][A
-Iteration:   1%|          | 421/44333 [6:28:48<660:43:45, 54.17s/it][A
-Iteration:   1%|          | 422/44333 [6:29:42<660:16:12, 54.13s/it][A
-Iteration:   1%|          | 423/44333 [6:30:32<645:33:55, 52.93s/it][A
-Iteration:   1%|          | 424/44333 [6:31:23<637:24:29, 52.26s/it][A
-Iteration:   1%|          | 425/44333 [6:32:11<622:19:18, 51.02s/it][A
-Iteration:   1%|          | 426/44333 [6:33:04<628:52:44, 51.56s/it][A
-Iteration:   1%|          | 427/44333 [6:33:57<635:57:47, 52.14s/it][A
-Iteration:   1%|          | 428/44333 [6:34:50<636:27:07, 52.19s/it][A
-Iteration:   1%|          | 429/44333 [6:35:38<621:53:08, 50.99s/it][A
-Iteration:   1%|          | 430/44333 [6:36:25<609:38:56, 49.99s/it][A
-Iteration:   1%|          | 431/44333 [6:37:17<615:14:46, 50.45s/it][A
-Iteration:   1%|          | 432/44333 [6:38:11<627:25:40, 51.45s/it][A
-Iteration:   1%|          | 433/44333 [6:39:05<638:54:48, 52.39s/it][A
-Iteration:   1%|          | 434/44333 [6:40:00<646:11:25, 52.99s/it][A
-Iteration:   1%|          | 435/44333 [6:40:53<647:30:48, 53.10s/it][A
-Iteration:   1%|          | 436/44333 [6:41:44<639:52:39, 52.48s/it][A
-Iteration:   1%|          | 437/44333 [6:42:37<641:14:15, 52.59s/it][A
-Iteration:   1%|          | 438/44333 [6:43:30<642:51:51, 52.72s/it][A
-Iteration:   1%|          | 439/44333 [6:44:24<647:53:03, 53.14s/it][A
-Iteration:   1%|          | 440/44333 [6:45:19<654:42:04, 53.70s/it][A
-Iteration:   1%|          | 441/44333 [6:46:10<645:15:45, 52.92s/it][A
-Iteration:   1%|          | 442/44333 [6:47:03<644:13:51, 52.84s/it][A
-Iteration:   1%|          | 443/44333 [6:47:54<637:57:52, 52.33s/it][A
-Iteration:   1%|          | 444/44333 [6:48:47<640:26:45, 52.53s/it][A
-Iteration:   1%|          | 445/44333 [6:49:41<644:34:13, 52.87s/it][A
-Iteration:   1%|          | 446/44333 [6:50:34<645:09:31, 52.92s/it][A
-Iteration:   1%|          | 447/44333 [6:51:28<649:04:29, 53.24s/it][A
-Iteration:   1%|          | 448/44333 [6:52:24<661:47:45, 54.29s/it][A
-Iteration:   1%|          | 449/44333 [6:53:20<665:40:41, 54.61s/it][A
-Iteration:   1%|          | 450/44333 [6:54:16<671:15:44, 55.07s/it][A
-Iteration:   1%|          | 451/44333 [6:55:11<672:49:56, 55.20s/it][A
-Iteration:   1%|          | 452/44333 [6:56:02<657:45:44, 53.96s/it][A
-Iteration:   1%|          | 453/44333 [6:56:56<654:29:17, 53.70s/it][A
-Iteration:   1%|          | 454/44333 [6:57:47<645:32:30, 52.96s/it][A
-Iteration:   1%|          | 455/44333 [6:58:44<659:41:50, 54.13s/it][A
-Iteration:   1%|          | 456/44333 [6:59:41<673:01:04, 55.22s/it][A
-Iteration:   1%|          | 457/44333 [7:00:37<673:14:20, 55.24s/it][A
-Iteration:   1%|          | 458/44333 [7:01:33<678:22:09, 55.66s/it][A
-Iteration:   1%|          | 459/44333 [7:02:34<695:41:20, 57.08s/it][A
-Iteration:   1%|          | 460/44333 [7:03:28<686:05:10, 56.30s/it][A
-Iteration:   1%|          | 461/44333 [7:04:24<683:43:42, 56.10s/it][A
-Iteration:   1%|          | 462/44333 [7:05:16<670:43:32, 55.04s/it][A
-Iteration:   1%|          | 463/44333 [7:06:15<683:37:29, 56.10s/it][A
-Iteration:   1%|          | 464/44333 [7:07:13<689:31:18, 56.58s/it][A
-Iteration:   1%|          | 465/44333 [7:08:08<685:59:48, 56.30s/it][A
-Iteration:   1%|          | 466/44333 [7:09:03<681:10:37, 55.90s/it][A
-Iteration:   1%|          | 467/44333 [7:10:01<687:11:06, 56.40s/it][A
-Iteration:   1%|          | 468/44333 [7:10:53<671:05:06, 55.08s/it][A
-Iteration:   1%|          | 469/44333 [7:11:49<673:28:07, 55.27s/it][A
-Iteration:   1%|          | 470/44333 [7:12:42<665:54:37, 54.65s/it][A
-Iteration:   1%|          | 471/44333 [7:13:34<658:07:21, 54.02s/it][A
-Iteration:   1%|          | 472/44333 [7:14:24<643:06:03, 52.78s/it][A
-Iteration:   1%|          | 473/44333 [7:15:17<644:54:53, 52.93s/it][A
-Iteration:   1%|          | 474/44333 [7:16:10<643:46:03, 52.84s/it][A
-Iteration:   1%|          | 475/44333 [7:17:02<640:28:24, 52.57s/it][A
-Iteration:   1%|          | 476/44333 [7:17:53<633:10:13, 51.97s/it][A
-Iteration:   1%|          | 477/44333 [7:18:46<637:16:21, 52.31s/it][A
-Iteration:   1%|          | 478/44333 [7:19:38<636:37:57, 52.26s/it][A
-Iteration:   1%|          | 479/44333 [7:20:32<642:13:38, 52.72s/it][A
-Iteration:   1%|          | 480/44333 [7:21:30<663:23:30, 54.46s/it][A
-Iteration:   1%|          | 481/44333 [7:22:27<671:20:51, 55.11s/it][A
-Iteration:   1%|          | 482/44333 [7:23:23<676:50:56, 55.57s/it][A
-Iteration:   1%|          | 483/44333 [7:24:26<701:34:02, 57.60s/it][A
-Iteration:   1%|          | 484/44333 [7:25:24<703:18:01, 57.74s/it][A
-Iteration:   1%|          | 485/44333 [7:26:17<688:02:59, 56.49s/it][A
-Iteration:   1%|          | 486/44333 [7:27:11<677:31:08, 55.63s/it][A
-Iteration:   1%|          | 487/44333 [7:28:09<686:46:34, 56.39s/it][A
-Iteration:   1%|          | 488/44333 [7:29:11<706:40:07, 58.02s/it][A
-Iteration:   1%|          | 489/44333 [7:30:03<686:04:09, 56.33s/it][A
-Iteration:   1%|          | 490/44333 [7:30:57<676:59:35, 55.59s/it][A
-Iteration:   1%|          | 491/44333 [7:31:54<681:19:34, 55.95s/it][A
-Iteration:   1%|          | 492/44333 [7:32:50<680:35:38, 55.89s/it][A
-Iteration:   1%|          | 493/44333 [7:33:42<665:33:07, 54.65s/it][A
-Iteration:   1%|          | 494/44333 [7:34:38<671:55:52, 55.18s/it][A
-Iteration:   1%|          | 495/44333 [7:35:29<655:42:24, 53.85s/it][A
-Iteration:   1%|          | 496/44333 [7:36:25<663:46:48, 54.51s/it][A
-Iteration:   1%|          | 497/44333 [7:37:20<664:35:08, 54.58s/it][A
-Iteration:   1%|          | 498/44333 [7:38:21<691:01:41, 56.75s/it][A
-Iteration:   1%|          | 499/44333 [7:39:19<693:35:44, 56.96s/it][A
-Iteration:   1%|          | 500/44333 [7:40:14<688:47:49, 56.57s/it][A
-Iteration:   1%|          | 501/44333 [7:41:05<665:31:45, 54.66s/it][A
-Iteration:   1%|          | 502/44333 [7:42:03<680:02:32, 55.85s/it][A
-Iteration:   1%|          | 503/44333 [7:42:58<675:54:47, 55.52s/it][A
-Iteration:   1%|          | 504/44333 [7:43:56<685:57:32, 56.34s/it][A
-Iteration:   1%|          | 505/44333 [7:44:51<679:26:16, 55.81s/it][A
-Iteration:   1%|          | 506/44333 [7:45:46<677:51:28, 55.68s/it][A
-Iteration:   1%|          | 507/44333 [7:46:40<669:52:16, 55.03s/it][A
-Iteration:   1%|          | 508/44333 [7:47:34<667:31:44, 54.83s/it][A
-Iteration:   1%|          | 509/44333 [7:48:24<650:28:02, 53.43s/it][A
-Iteration:   1%|          | 510/44333 [7:49:17<646:39:31, 53.12s/it][A
-Iteration:   1%|          | 511/44333 [7:50:11<651:38:36, 53.53s/it][A
-Iteration:   1%|          | 512/44333 [7:51:09<668:35:14, 54.93s/it][A
-Iteration:   1%|          | 513/44333 [7:52:05<670:11:39, 55.06s/it][A
-Iteration:   1%|          | 514/44333 [7:52:58<664:26:06, 54.59s/it][A
-Iteration:   1%|          | 515/44333 [7:53:54<670:35:41, 55.09s/it][A
-Iteration:   1%|          | 516/44333 [7:54:47<660:55:12, 54.30s/it][A
-Iteration:   1%|          | 517/44333 [7:55:42<663:21:01, 54.50s/it][A
-Iteration:   1%|          | 518/44333 [7:56:31<644:41:27, 52.97s/it][A
-Iteration:   1%|          | 519/44333 [7:57:23<638:44:19, 52.48s/it][A
-Iteration:   1%|          | 520/44333 [7:58:16<643:14:45, 52.85s/it][A
-Iteration:   1%|          | 521/44333 [7:59:07<634:52:30, 52.17s/it][A
-Iteration:   1%|          | 522/44333 [7:59:57<626:37:21, 51.49s/it][A
-Iteration:   1%|          | 523/44333 [8:00:48<624:27:15, 51.31s/it][A
-Iteration:   1%|          | 524/44333 [8:01:41<630:01:27, 51.77s/it][A
-Iteration:   1%|          | 525/44333 [8:02:34<637:27:52, 52.38s/it][A
-Iteration:   1%|          | 526/44333 [8:03:28<641:48:57, 52.74s/it][A
-Iteration:   1%|          | 527/44333 [8:04:24<654:02:31, 53.75s/it][A
-Iteration:   1%|          | 528/44333 [8:05:25<680:18:20, 55.91s/it][A
-Iteration:   1%|          | 529/44333 [8:06:20<675:48:48, 55.54s/it][A
-Iteration:   1%|          | 530/44333 [8:07:19<690:58:38, 56.79s/it][A
-Iteration:   1%|          | 531/44333 [8:08:16<690:10:30, 56.72s/it][A
-Iteration:   1%|          | 532/44333 [8:09:13<691:44:18, 56.85s/it][A
-Iteration:   1%|          | 533/44333 [8:10:06<678:01:26, 55.73s/it][A
-Iteration:   1%|          | 534/44333 [8:11:02<679:46:47, 55.87s/it][A
-Iteration:   1%|          | 535/44333 [8:11:58<678:38:56, 55.78s/it][A
-Iteration:   1%|          | 536/44333 [8:12:57<692:02:27, 56.88s/it][A
-Iteration:   1%|          | 537/44333 [8:13:51<678:21:22, 55.76s/it][A
-Iteration:   1%|          | 538/44333 [8:14:49<687:24:51, 56.51s/it][A
-Iteration:   1%|          | 539/44333 [8:15:43<680:31:15, 55.94s/it][A
-Iteration:   1%|          | 540/44333 [8:16:46<703:14:27, 57.81s/it][A
-Iteration:   1%|          | 541/44333 [8:17:38<684:59:39, 56.31s/it][A
-Iteration:   1%|          | 542/44333 [8:18:38<695:00:41, 57.14s/it][A
-Iteration:   1%|          | 543/44333 [8:19:31<682:07:21, 56.08s/it][A
-Iteration:   1%|          | 544/44333 [8:20:28<685:27:08, 56.35s/it][A
-Iteration:   1%|          | 545/44333 [8:21:25<688:28:26, 56.60s/it][A
-Iteration:   1%|          | 546/44333 [8:22:22<688:29:56, 56.61s/it][A
-Iteration:   1%|          | 547/44333 [8:23:14<671:29:33, 55.21s/it][A
-Iteration:   1%|          | 548/44333 [8:24:10<674:08:16, 55.43s/it][A
-Iteration:   1%|          | 549/44333 [8:25:02<661:22:21, 54.38s/it][A
-Iteration:   1%|          | 550/44333 [8:25:57<662:54:11, 54.51s/it][A
-Iteration:   1%|          | 551/44333 [8:26:50<659:45:03, 54.25s/it][A
-Iteration:   1%|          | 552/44333 [8:27:40<643:47:42, 52.94s/it][A
-Iteration:   1%|          | 553/44333 [8:28:30<634:33:16, 52.18s/it][A
-Iteration:   1%|          | 554/44333 [8:29:22<632:33:15, 52.02s/it][A
-Iteration:   1%|▏         | 555/44333 [8:30:15<634:29:21, 52.18s/it][A
-Iteration:   1%|▏         | 556/44333 [8:31:04<625:12:06, 51.41s/it][A
-Iteration:   1%|▏         | 557/44333 [8:31:54<617:15:01, 50.76s/it][A
-Iteration:   1%|▏         | 558/44333 [8:32:43<614:01:29, 50.50s/it][A
-Iteration:   1%|▏         | 559/44333 [8:33:33<609:55:14, 50.16s/it][A
-Iteration:   1%|▏         | 560/44333 [8:34:24<615:24:21, 50.61s/it][A
-Iteration:   1%|▏         | 561/44333 [8:35:22<640:25:46, 52.67s/it][A
-Iteration:   1%|▏         | 562/44333 [8:36:17<648:46:23, 53.36s/it][A
-Iteration:   1%|▏         | 563/44333 [8:37:08<638:49:45, 52.54s/it][A
-Iteration:   1%|▏         | 564/44333 [8:37:57<629:16:54, 51.76s/it][A
-Iteration:   1%|▏         | 565/44333 [8:38:50<631:09:23, 51.91s/it][A
-Iteration:   1%|▏         | 566/44333 [8:39:41<630:07:28, 51.83s/it][A
-Iteration:   1%|▏         | 567/44333 [8:40:29<614:01:07, 50.51s/it][A
-Iteration:   1%|▏         | 568/44333 [8:41:23<626:03:01, 51.50s/it][A
-Iteration:   1%|▏         | 569/44333 [8:42:19<643:49:18, 52.96s/it][A
-Iteration:   1%|▏         | 570/44333 [8:43:14<652:06:20, 53.64s/it][A
-Iteration:   1%|▏         | 571/44333 [8:44:10<659:48:34, 54.28s/it][A
-Iteration:   1%|▏         | 572/44333 [8:45:01<646:52:33, 53.22s/it][A
-Iteration:   1%|▏         | 573/44333 [8:45:58<661:08:45, 54.39s/it][A
-Iteration:   1%|▏         | 574/44333 [8:46:50<654:21:33, 53.83s/it][A
-Iteration:   1%|▏         | 575/44333 [8:47:42<647:06:23, 53.24s/it][A
-Iteration:   1%|▏         | 576/44333 [8:48:36<647:43:52, 53.29s/it][A
-Iteration:   1%|▏         | 577/44333 [8:49:30<650:09:43, 53.49s/it][A
-Iteration:   1%|▏         | 578/44333 [8:50:23<650:54:37, 53.55s/it][A
-Iteration:   1%|▏         | 579/44333 [8:51:16<648:12:18, 53.33s/it][A
-Iteration:   1%|▏         | 580/44333 [8:52:10<651:48:30, 53.63s/it][A
-Iteration:   1%|▏         | 581/44333 [8:53:04<650:34:56, 53.53s/it][A
-Iteration:   1%|▏         | 582/44333 [8:53:58<651:47:14, 53.63s/it][A
-Iteration:   1%|▏         | 583/44333 [8:54:48<639:13:03, 52.60s/it][A
-Iteration:   1%|▏         | 584/44333 [8:55:42<644:35:24, 53.04s/it][A
-Iteration:   1%|▏         | 585/44333 [8:56:35<643:12:00, 52.93s/it][A
-Iteration:   1%|▏         | 586/44333 [8:57:25<634:04:45, 52.18s/it][A
-Iteration:   1%|▏         | 587/44333 [8:58:13<618:37:27, 50.91s/it][A
-Iteration:   1%|▏         | 588/44333 [8:59:02<610:44:30, 50.26s/it][A
-Iteration:   1%|▏         | 589/44333 [8:59:52<610:30:01, 50.24s/it][A
-Iteration:   1%|▏         | 590/44333 [9:00:40<601:52:55, 49.53s/it][A
-Iteration:   1%|▏         | 591/44333 [9:01:32<610:22:30, 50.23s/it][A
-Iteration:   1%|▏         | 592/44333 [9:02:28<634:28:35, 52.22s/it][A
-Iteration:   1%|▏         | 593/44333 [9:03:25<650:30:10, 53.54s/it][A
-Iteration:   1%|▏         | 594/44333 [9:04:24<670:04:05, 55.15s/it][A
-Iteration:   1%|▏         | 595/44333 [9:05:23<684:41:45, 56.36s/it][A
-Iteration:   1%|▏         | 596/44333 [9:06:16<673:02:09, 55.40s/it][A
-Iteration:   1%|▏         | 597/44333 [9:07:09<662:41:02, 54.55s/it][A
-Iteration:   1%|▏         | 598/44333 [9:08:01<652:19:17, 53.70s/it][A
-Iteration:   1%|▏         | 599/44333 [9:08:54<650:29:30, 53.55s/it][A
-Iteration:   1%|▏         | 600/44333 [9:09:45<641:46:10, 52.83s/it][A
-Iteration:   1%|▏         | 601/44333 [9:10:33<625:35:08, 51.50s/it][A
-Iteration:   1%|▏         | 602/44333 [9:11:26<628:02:39, 51.70s/it][A
-Iteration:   1%|▏         | 603/44333 [9:12:20<636:19:18, 52.38s/it][A
-Iteration:   1%|▏         | 604/44333 [9:13:11<632:22:27, 52.06s/it][A
-Iteration:   1%|▏         | 605/44333 [9:14:07<647:44:14, 53.33s/it][A
-Iteration:   1%|▏         | 606/44333 [9:15:03<656:41:42, 54.07s/it][A
-Iteration:   1%|▏         | 607/44333 [9:16:04<680:47:30, 56.05s/it][A
-Iteration:   1%|▏         | 608/44333 [9:17:00<683:18:31, 56.26s/it][A
-Iteration:   1%|▏         | 609/44333 [9:17:57<683:46:19, 56.30s/it][A
-Iteration:   1%|▏         | 610/44333 [9:18:52<678:39:54, 55.88s/it][A
-Iteration:   1%|▏         | 611/44333 [9:19:49<685:17:46, 56.43s/it][A
-Iteration:   1%|▏         | 612/44333 [9:20:39<661:56:15, 54.50s/it][A
-Iteration:   1%|▏         | 613/44333 [9:21:36<668:58:05, 55.08s/it][A
-Iteration:   1%|▏         | 614/44333 [9:22:33<675:39:45, 55.64s/it][A
-Iteration:   1%|▏         | 615/44333 [9:23:27<671:19:49, 55.28s/it][A
-Iteration:   1%|▏         | 616/44333 [9:24:21<667:04:49, 54.93s/it][A
-Iteration:   1%|▏         | 617/44333 [9:25:19<675:33:52, 55.63s/it][A
-Iteration:   1%|▏         | 618/44333 [9:26:14<675:16:39, 55.61s/it][A
-Iteration:   1%|▏         | 619/44333 [9:27:07<664:28:52, 54.72s/it][A
-Iteration:   1%|▏         | 620/44333 [9:28:03<670:49:33, 55.25s/it][A
-Iteration:   1%|▏         | 621/44333 [9:28:58<668:13:56, 55.03s/it][A
-Iteration:   1%|▏         | 622/44333 [9:29:50<656:47:05, 54.09s/it][A
-Iteration:   1%|▏         | 623/44333 [9:30:40<641:32:33, 52.84s/it][A
-Iteration:   1%|▏         | 624/44333 [9:31:34<646:04:41, 53.21s/it][A
-Iteration:   1%|▏         | 625/44333 [9:32:29<654:33:10, 53.91s/it][A
-Iteration:   1%|▏         | 626/44333 [9:33:19<640:52:44, 52.79s/it][A
-Iteration:   1%|▏         | 627/44333 [9:34:11<637:40:59, 52.53s/it][A
-Iteration:   1%|▏         | 628/44333 [9:34:59<620:06:04, 51.08s/it][A
-Iteration:   1%|▏         | 629/44333 [9:35:51<623:58:46, 51.40s/it][A
-Iteration:   1%|▏         | 630/44333 [9:36:43<626:43:34, 51.63s/it][A
-Iteration:   1%|▏         | 631/44333 [9:37:35<628:41:07, 51.79s/it][A
-Iteration:   1%|▏         | 632/44333 [9:38:32<646:10:10, 53.23s/it][A
-Iteration:   1%|▏         | 633/44333 [9:39:27<651:03:57, 53.63s/it][A
-Iteration:   1%|▏         | 634/44333 [9:40:19<648:07:17, 53.39s/it][A
-Iteration:   1%|▏         | 635/44333 [9:41:15<656:38:05, 54.10s/it][A
-Iteration:   1%|▏         | 636/44333 [9:42:11<662:17:03, 54.56s/it][A
-Iteration:   1%|▏         | 637/44333 [9:43:02<648:10:25, 53.40s/it][A
-Iteration:   1%|▏         | 638/44333 [9:43:54<645:30:47, 53.18s/it][A
-Iteration:   1%|▏         | 639/44333 [9:44:51<657:14:34, 54.15s/it][A
-Iteration:   1%|▏         | 640/44333 [9:45:48<669:08:40, 55.13s/it][A
-Iteration:   1%|▏         | 641/44333 [9:46:42<663:26:18, 54.66s/it][A
-Iteration:   1%|▏         | 642/44333 [9:47:41<681:47:49, 56.18s/it][A
-Iteration:   1%|▏         | 643/44333 [9:48:36<676:20:38, 55.73s/it][A
-Iteration:   1%|▏         | 644/44333 [9:49:34<685:03:22, 56.45s/it][A
-Iteration:   1%|▏         | 645/44333 [9:50:25<666:16:49, 54.90s/it][A
-Iteration:   1%|▏         | 646/44333 [9:51:17<652:52:53, 53.80s/it][A
-Iteration:   1%|▏         | 647/44333 [9:52:11<654:08:05, 53.90s/it][A
-Iteration:   1%|▏         | 648/44333 [9:53:10<674:40:03, 55.60s/it][A
-Iteration:   1%|▏         | 649/44333 [9:54:04<665:56:15, 54.88s/it][A
-Iteration:   1%|▏         | 650/44333 [9:54:58<666:07:38, 54.90s/it][A
-Iteration:   1%|▏         | 651/44333 [9:55:55<673:08:36, 55.48s/it][A
-Iteration:   1%|▏         | 652/44333 [9:56:49<668:24:57, 55.09s/it][A
-Iteration:   1%|▏         | 653/44333 [9:57:45<671:43:00, 55.36s/it][A
-Iteration:   1%|▏         | 654/44333 [9:58:39<665:09:44, 54.82s/it][A
-Iteration:   1%|▏         | 655/44333 [9:59:30<652:50:17, 53.81s/it][A
-Iteration:   1%|▏         | 656/44333 [10:00:22<644:28:30, 53.12s/it][A
-Iteration:   1%|▏         | 657/44333 [10:01:20<661:17:40, 54.51s/it][A
-Iteration:   1%|▏         | 658/44333 [10:02:17<670:53:32, 55.30s/it][A
-Iteration:   1%|▏         | 659/44333 [10:03:13<674:41:41, 55.61s/it][A
-Iteration:   1%|▏         | 660/44333 [10:04:05<660:56:27, 54.48s/it][A
-Iteration:   1%|▏         | 661/44333 [10:04:56<646:16:52, 53.27s/it][A
-Iteration:   1%|▏         | 662/44333 [10:05:51<655:10:14, 54.01s/it][A
-Iteration:   1%|▏         | 663/44333 [10:06:42<642:16:37, 52.95s/it][A
-Iteration:   1%|▏         | 664/44333 [10:07:33<635:18:43, 52.37s/it][A
-Iteration:   2%|▏         | 665/44333 [10:08:28<645:12:13, 53.19s/it][A
-Iteration:   2%|▏         | 666/44333 [10:09:23<652:12:06, 53.77s/it][A
-Iteration:   2%|▏         | 667/44333 [10:10:18<655:07:33, 54.01s/it][A
-Iteration:   2%|▏         | 668/44333 [10:11:12<658:20:17, 54.28s/it][A
-Iteration:   2%|▏         | 669/44333 [10:12:08<662:27:43, 54.62s/it][A
-Iteration:   2%|▏         | 670/44333 [10:13:05<673:16:43, 55.51s/it][A
-Iteration:   2%|▏         | 671/44333 [10:14:02<678:39:11, 55.96s/it][A
-Iteration:   2%|▏         | 672/44333 [10:15:00<682:40:14, 56.29s/it][A
-Iteration:   2%|▏         | 673/44333 [10:15:58<691:05:16, 56.98s/it][A
-Iteration:   2%|▏         | 674/44333 [10:16:54<687:01:45, 56.65s/it][A
-Iteration:   2%|▏         | 675/44333 [10:17:51<686:48:48, 56.63s/it][A
-Iteration:   2%|▏         | 676/44333 [10:18:43<669:48:16, 55.23s/it][A
-Iteration:   2%|▏         | 677/44333 [10:19:34<655:23:25, 54.05s/it][A
-Iteration:   2%|▏         | 678/44333 [10:20:26<648:21:30, 53.47s/it][A
-Iteration:   2%|▏         | 679/44333 [10:21:20<649:15:54, 53.54s/it][A
-Iteration:   2%|▏         | 680/44333 [10:22:14<652:59:33, 53.85s/it][A
-Iteration:   2%|▏         | 681/44333 [10:23:09<654:49:36, 54.00s/it][A
-Iteration:   2%|▏         | 682/44333 [10:24:01<650:12:50, 53.62s/it][A
-Iteration:   2%|▏         | 683/44333 [10:24:55<648:48:35, 53.51s/it][A
-Iteration:   2%|▏         | 684/44333 [10:25:54<668:33:35, 55.14s/it][A
-Iteration:   2%|▏         | 685/44333 [10:26:49<670:38:52, 55.31s/it][A
-Iteration:   2%|▏         | 686/44333 [10:27:45<673:56:03, 55.59s/it][A
-Iteration:   2%|▏         | 687/44333 [10:28:43<682:12:44, 56.27s/it][A
-Iteration:   2%|▏         | 688/44333 [10:29:38<677:05:19, 55.85s/it][A
-Iteration:   2%|▏         | 689/44333 [10:30:35<682:04:19, 56.26s/it][A
-Iteration:   2%|▏         | 690/44333 [10:31:35<693:21:18, 57.19s/it][A
-Iteration:   2%|▏         | 691/44333 [10:32:32<695:00:34, 57.33s/it][A
-Iteration:   2%|▏         | 692/44333 [10:33:24<673:18:43, 55.54s/it][A
-Iteration:   2%|▏         | 693/44333 [10:34:20<676:41:29, 55.82s/it][A
-Iteration:   2%|▏         | 694/44333 [10:35:17<681:23:36, 56.21s/it][A
-Iteration:   2%|▏         | 695/44333 [10:36:13<680:06:38, 56.11s/it][A
-Iteration:   2%|▏         | 696/44333 [10:37:10<682:01:35, 56.27s/it][A
-Iteration:   2%|▏         | 697/44333 [10:38:04<674:49:05, 55.67s/it][A
-Iteration:   2%|▏         | 698/44333 [10:38:57<664:10:37, 54.80s/it][A
-Iteration:   2%|▏         | 699/44333 [10:39:51<662:39:53, 54.67s/it][A
-Iteration:   2%|▏         | 700/44333 [10:40:49<675:21:45, 55.72s/it][A
-Iteration:   2%|▏         | 701/44333 [10:41:44<669:55:46, 55.27s/it][A
-Iteration:   2%|▏         | 702/44333 [10:42:37<663:33:34, 54.75s/it][A
-Iteration:   2%|▏         | 703/44333 [10:43:33<666:54:51, 55.03s/it][A
-Iteration:   2%|▏         | 704/44333 [10:44:27<662:59:42, 54.71s/it][A
-Iteration:   2%|▏         | 705/44333 [10:45:26<679:25:49, 56.06s/it][A
-Iteration:   2%|▏         | 706/44333 [10:46:25<688:42:54, 56.83s/it][A
-Iteration:   2%|▏         | 707/44333 [10:47:19<680:56:22, 56.19s/it][A
-Iteration:   2%|▏         | 708/44333 [10:48:13<672:49:41, 55.52s/it][A
-Iteration:   2%|▏         | 709/44333 [10:49:06<661:46:39, 54.61s/it][A
-Iteration:   2%|▏         | 710/44333 [10:49:57<650:17:12, 53.67s/it][A
-Iteration:   2%|▏         | 711/44333 [10:50:48<637:30:28, 52.61s/it][A
-Iteration:   2%|▏         | 712/44333 [10:51:41<642:31:46, 53.03s/it][A
-Iteration:   2%|▏         | 713/44333 [10:52:36<648:14:47, 53.50s/it][A
-Iteration:   2%|▏         | 714/44333 [10:53:30<648:05:53, 53.49s/it][A
-Iteration:   2%|▏         | 715/44333 [10:54:20<636:41:45, 52.55s/it][A
-Iteration:   2%|▏         | 716/44333 [10:55:16<649:38:16, 53.62s/it][A
-Iteration:   2%|▏         | 717/44333 [10:56:13<660:53:08, 54.55s/it][A
-Iteration:   2%|▏         | 718/44333 [10:57:07<660:19:39, 54.50s/it][A
-Iteration:   2%|▏         | 719/44333 [10:58:02<660:02:39, 54.48s/it][A
-Iteration:   2%|▏         | 720/44333 [10:58:57<663:59:56, 54.81s/it][A
-Iteration:   2%|▏         | 721/44333 [10:59:54<670:11:35, 55.32s/it][A
-Iteration:   2%|▏         | 722/44333 [11:00:57<698:53:40, 57.69s/it][A
-Iteration:   2%|▏         | 723/44333 [11:01:58<711:51:42, 58.76s/it][A
-Iteration:   2%|▏         | 724/44333 [11:02:51<688:58:03, 56.88s/it][A
-Iteration:   2%|▏         | 725/44333 [11:03:44<677:55:34, 55.97s/it][A
-Iteration:   2%|▏         | 726/44333 [11:04:36<663:23:09, 54.77s/it][A
-Iteration:   2%|▏         | 727/44333 [11:05:36<680:19:02, 56.17s/it][A
-Iteration:   2%|▏         | 728/44333 [11:06:31<677:42:47, 55.95s/it][A
-Iteration:   2%|▏         | 729/44333 [11:07:26<671:50:35, 55.47s/it][A
-Iteration:   2%|▏         | 730/44333 [11:08:23<680:01:40, 56.15s/it][A
-Iteration:   2%|▏         | 731/44333 [11:09:20<682:17:58, 56.33s/it][A
-Iteration:   2%|▏         | 732/44333 [11:10:16<681:22:51, 56.26s/it][A
-Iteration:   2%|▏         | 733/44333 [11:11:14<685:29:00, 56.60s/it][A
-Iteration:   2%|▏         | 734/44333 [11:12:13<694:01:38, 57.31s/it][A
-Iteration:   2%|▏         | 735/44333 [11:13:09<691:51:22, 57.13s/it][A
-Iteration:   2%|▏         | 736/44333 [11:14:08<695:55:30, 57.47s/it][A
-Iteration:   2%|▏         | 737/44333 [11:15:09<711:22:20, 58.74s/it][A
-Iteration:   2%|▏         | 738/44333 [11:16:09<714:08:47, 58.97s/it][A
-Iteration:   2%|▏         | 739/44333 [11:17:04<699:30:56, 57.77s/it][A
-Iteration:   2%|▏         | 740/44333 [11:17:57<682:11:03, 56.34s/it][A
-Iteration:   2%|▏         | 741/44333 [11:18:57<695:03:14, 57.40s/it][A
-Iteration:   2%|▏         | 742/44333 [11:19:53<693:00:52, 57.23s/it][A
-Iteration:   2%|▏         | 743/44333 [11:20:51<693:39:09, 57.29s/it][A
-Iteration:   2%|▏         | 744/44333 [11:21:46<684:44:45, 56.55s/it][A
-Iteration:   2%|▏         | 745/44333 [11:22:36<660:07:37, 54.52s/it][A
-Iteration:   2%|▏         | 746/44333 [11:23:27<648:34:34, 53.57s/it][A
-Iteration:   2%|▏         | 747/44333 [11:24:17<636:11:11, 52.55s/it][A
-Iteration:   2%|▏         | 748/44333 [11:25:07<627:42:34, 51.85s/it][A
-Iteration:   2%|▏         | 749/44333 [11:26:04<644:36:20, 53.24s/it][A
-Iteration:   2%|▏         | 750/44333 [11:26:53<631:54:40, 52.20s/it][A
-Iteration:   2%|▏         | 751/44333 [11:27:46<631:43:37, 52.18s/it][A
-Iteration:   2%|▏         | 752/44333 [11:28:42<647:05:37, 53.45s/it][A
-Iteration:   2%|▏         | 753/44333 [11:29:35<645:20:13, 53.31s/it][A
-Iteration:   2%|▏         | 754/44333 [11:30:28<643:54:21, 53.19s/it][A
-Iteration:   2%|▏         | 755/44333 [11:31:24<653:30:53, 53.99s/it][A
-Iteration:   2%|▏         | 756/44333 [11:32:14<639:51:11, 52.86s/it][A
-Iteration:   2%|▏         | 757/44333 [11:33:05<632:35:54, 52.26s/it][A
-Iteration:   2%|▏         | 758/44333 [11:33:58<637:06:39, 52.64s/it][A
-Iteration:   2%|▏         | 759/44333 [11:34:50<633:35:49, 52.35s/it][A
-Iteration:   2%|▏         | 760/44333 [11:35:44<637:35:29, 52.68s/it][A
-Iteration:   2%|▏         | 761/44333 [11:36:38<642:29:38, 53.08s/it][A
-Iteration:   2%|▏         | 762/44333 [11:37:36<660:15:29, 54.55s/it][A
-Iteration:   2%|▏         | 763/44333 [11:38:29<656:59:39, 54.28s/it][A
-Iteration:   2%|▏         | 764/44333 [11:39:24<660:37:25, 54.59s/it][A
-Iteration:   2%|▏         | 765/44333 [11:40:18<656:39:11, 54.26s/it][A
-Iteration:   2%|▏         | 766/44333 [11:41:15<667:01:39, 55.12s/it][A
-Iteration:   2%|▏         | 767/44333 [11:42:11<669:39:26, 55.34s/it][A
-Iteration:   2%|▏         | 768/44333 [11:43:12<689:14:10, 56.96s/it][A
-Iteration:   2%|▏         | 769/44333 [11:44:04<671:20:14, 55.48s/it][A
-Iteration:   2%|▏         | 770/44333 [11:45:01<678:37:41, 56.08s/it][A
-Iteration:   2%|▏         | 771/44333 [11:46:02<694:21:41, 57.38s/it][A
-Iteration:   2%|▏         | 772/44333 [11:46:59<694:49:06, 57.42s/it][A
-Iteration:   2%|▏         | 773/44333 [11:47:54<685:42:18, 56.67s/it][A
-Iteration:   2%|▏         | 774/44333 [11:48:52<689:07:58, 56.95s/it][A
-Iteration:   2%|▏         | 775/44333 [11:49:56<717:32:04, 59.30s/it][A
-Iteration:   2%|▏         | 776/44333 [11:50:55<716:01:33, 59.18s/it][A
-Iteration:   2%|▏         | 777/44333 [11:51:47<687:43:35, 56.84s/it][A
-Iteration:   2%|▏         | 778/44333 [11:52:44<688:32:48, 56.91s/it][A
-Iteration:   2%|▏         | 779/44333 [11:53:36<670:49:59, 55.45s/it][A
-Iteration:   2%|▏         | 780/44333 [11:54:32<672:23:15, 55.58s/it][A
-Iteration:   2%|▏         | 781/44333 [11:55:28<673:21:29, 55.66s/it][A
-Iteration:   2%|▏         | 782/44333 [11:56:25<681:13:49, 56.31s/it][A
-Iteration:   2%|▏         | 783/44333 [11:57:17<664:58:11, 54.97s/it][A
-Iteration:   2%|▏         | 784/44333 [11:58:10<657:32:24, 54.36s/it][A
-Iteration:   2%|▏         | 785/44333 [11:59:03<653:06:52, 53.99s/it][A
-Iteration:   2%|▏         | 786/44333 [11:59:58<654:09:23, 54.08s/it][A
-Iteration:   2%|▏         | 787/44333 [12:00:53<657:14:41, 54.34s/it][A
-Iteration:   2%|▏         | 788/44333 [12:01:50<666:58:59, 55.14s/it][A
-Iteration:   2%|▏         | 789/44333 [12:02:43<660:13:19, 54.58s/it][A
-Iteration:   2%|▏         | 790/44333 [12:03:39<666:58:41, 55.14s/it][A
-Iteration:   2%|▏         | 791/44333 [12:04:30<650:23:45, 53.77s/it][A
-Iteration:   2%|▏         | 792/44333 [12:05:24<652:41:47, 53.97s/it][A
-Iteration:   2%|▏         | 793/44333 [12:06:21<663:10:09, 54.83s/it][A
-Iteration:   2%|▏         | 794/44333 [12:07:19<674:18:04, 55.75s/it][A
-Iteration:   2%|▏         | 795/44333 [12:08:16<679:43:57, 56.20s/it][A
-Iteration:   2%|▏         | 796/44333 [12:09:10<669:47:59, 55.38s/it][A
-Iteration:   2%|▏         | 797/44333 [12:10:04<664:34:17, 54.95s/it][A
-Iteration:   2%|▏         | 798/44333 [12:11:05<685:56:34, 56.72s/it][A
-Iteration:   2%|▏         | 799/44333 [12:11:57<671:17:51, 55.51s/it][A
-Iteration:   2%|▏         | 800/44333 [12:12:52<666:58:53, 55.16s/it][A
-Iteration:   2%|▏         | 801/44333 [12:13:53<688:33:54, 56.94s/it][A
-Iteration:   2%|▏         | 802/44333 [12:14:52<695:27:13, 57.51s/it][A
-Iteration:   2%|▏         | 803/44333 [12:15:58<726:32:16, 60.09s/it][A
-Iteration:   2%|▏         | 804/44333 [12:16:51<702:50:43, 58.13s/it][A
-Iteration:   2%|▏         | 805/44333 [12:17:43<681:24:09, 56.36s/it][A
-Iteration:   2%|▏         | 806/44333 [12:18:40<681:28:23, 56.36s/it][A
-Iteration:   2%|▏         | 807/44333 [12:19:32<666:03:58, 55.09s/it][A
-Iteration:   2%|▏         | 808/44333 [12:20:26<662:50:13, 54.82s/it][A
-Iteration:   2%|▏         | 809/44333 [12:21:18<651:56:09, 53.92s/it][A
-Iteration:   2%|▏         | 810/44333 [12:22:12<653:11:08, 54.03s/it][A
-Iteration:   2%|▏         | 811/44333 [12:23:08<661:16:10, 54.70s/it][A
-Iteration:   2%|▏         | 812/44333 [12:23:59<644:53:54, 53.35s/it][A
-Iteration:   2%|▏         | 813/44333 [12:24:47<627:40:40, 51.92s/it][A
-Iteration:   2%|▏         | 814/44333 [12:25:39<625:58:08, 51.78s/it][A
-Iteration:   2%|▏         | 815/44333 [12:26:30<624:16:55, 51.64s/it][A
-Iteration:   2%|▏         | 816/44333 [12:27:23<627:52:36, 51.94s/it][A
-Iteration:   2%|▏         | 817/44333 [12:28:16<632:11:42, 52.30s/it][A
-Iteration:   2%|▏         | 818/44333 [12:29:13<651:22:57, 53.89s/it][A
-Iteration:   2%|▏         | 819/44333 [12:30:05<644:05:40, 53.29s/it][A
-Iteration:   2%|▏         | 820/44333 [12:30:56<634:44:40, 52.51s/it][A
-Iteration:   2%|▏         | 821/44333 [12:31:45<622:54:09, 51.54s/it][A
-Iteration:   2%|▏         | 822/44333 [12:32:35<614:51:12, 50.87s/it][A
-Iteration:   2%|▏         | 823/44333 [12:33:25<614:07:27, 50.81s/it][A
-Iteration:   2%|▏         | 824/44333 [12:34:16<615:04:06, 50.89s/it][A
-Iteration:   2%|▏         | 825/44333 [12:35:04<604:25:01, 50.01s/it][A
-Iteration:   2%|▏         | 826/44333 [12:35:57<615:49:56, 50.96s/it][A
-Iteration:   2%|▏         | 827/44333 [12:36:46<606:11:13, 50.16s/it][A
-Iteration:   2%|▏         | 828/44333 [12:37:38<612:16:56, 50.67s/it][A
-Iteration:   2%|▏         | 829/44333 [12:38:31<620:54:52, 51.38s/it][A
-Iteration:   2%|▏         | 830/44333 [12:39:26<636:20:28, 52.66s/it][A
-Iteration:   2%|▏         | 831/44333 [12:40:19<635:01:01, 52.55s/it][A
-Iteration:   2%|▏         | 832/44333 [12:41:12<639:13:18, 52.90s/it][A
-Iteration:   2%|▏         | 833/44333 [12:42:06<643:39:21, 53.27s/it][A
-Iteration:   2%|▏         | 834/44333 [12:43:02<653:01:04, 54.04s/it][A
-Iteration:   2%|▏         | 835/44333 [12:43:58<659:28:59, 54.58s/it][A
-Iteration:   2%|▏         | 836/44333 [12:44:53<660:34:51, 54.67s/it][A
-Iteration:   2%|▏         | 837/44333 [12:45:49<665:21:04, 55.07s/it][A
-Iteration:   2%|▏         | 838/44333 [12:46:40<649:30:02, 53.76s/it][A
-Iteration:   2%|▏         | 839/44333 [12:47:33<649:35:25, 53.77s/it][A
-Iteration:   2%|▏         | 840/44333 [12:48:25<641:49:56, 53.13s/it][A
-Iteration:   2%|▏         | 841/44333 [12:49:18<642:32:56, 53.19s/it][A
-Iteration:   2%|▏         | 842/44333 [12:50:09<631:24:25, 52.27s/it][A
-Iteration:   2%|▏         | 843/44333 [12:51:00<628:18:23, 52.01s/it][A
-Iteration:   2%|▏         | 844/44333 [12:51:52<627:53:29, 51.98s/it][A
-Iteration:   2%|▏         | 845/44333 [12:52:43<625:06:49, 51.75s/it][A
-Iteration:   2%|▏         | 846/44333 [12:53:32<613:39:04, 50.80s/it][A
-Iteration:   2%|▏         | 847/44333 [12:54:22<612:28:55, 50.70s/it][A
-Iteration:   2%|▏         | 848/44333 [12:55:18<630:28:47, 52.20s/it][A
-Iteration:   2%|▏         | 849/44333 [12:56:14<645:59:00, 53.48s/it][A
-Iteration:   2%|▏         | 850/44333 [12:57:09<650:50:06, 53.88s/it][A
-Iteration:   2%|▏         | 851/44333 [12:58:07<665:04:17, 55.06s/it][A
-Iteration:   2%|▏         | 852/44333 [12:59:02<666:40:22, 55.20s/it][A
-Iteration:   2%|▏         | 853/44333 [12:59:57<665:15:52, 55.08s/it][A
-Iteration:   2%|▏         | 854/44333 [13:00:49<654:54:15, 54.23s/it][A
-Iteration:   2%|▏         | 855/44333 [13:01:42<648:00:04, 53.65s/it][A
-Iteration:   2%|▏         | 856/44333 [13:02:36<649:00:40, 53.74s/it][A
-Iteration:   2%|▏         | 857/44333 [13:03:32<656:40:24, 54.38s/it][A
-Iteration:   2%|▏         | 858/44333 [13:04:31<675:40:40, 55.95s/it][A
-Iteration:   2%|▏         | 859/44333 [13:05:31<689:47:24, 57.12s/it][A
-Iteration:   2%|▏         | 860/44333 [13:06:26<683:23:26, 56.59s/it][A
-Iteration:   2%|▏         | 861/44333 [13:07:21<674:25:37, 55.85s/it][A
-Iteration:   2%|▏         | 862/44333 [13:08:18<679:48:29, 56.30s/it][A
-Iteration:   2%|▏         | 863/44333 [13:09:11<666:55:05, 55.23s/it][A
-Iteration:   2%|▏         | 864/44333 [13:10:02<653:45:39, 54.14s/it][A
-Iteration:   2%|▏         | 865/44333 [13:10:52<639:35:59, 52.97s/it][A
-Iteration:   2%|▏         | 866/44333 [13:11:46<642:32:06, 53.22s/it][A
-Iteration:   2%|▏         | 867/44333 [13:12:37<633:11:50, 52.44s/it][A
-Iteration:   2%|▏         | 868/44333 [13:13:29<632:37:06, 52.40s/it][A
-Iteration:   2%|▏         | 869/44333 [13:14:21<629:58:15, 52.18s/it][A
-Iteration:   2%|▏         | 870/44333 [13:15:14<633:37:28, 52.48s/it][A
-Iteration:   2%|▏         | 871/44333 [13:16:08<639:18:39, 52.95s/it][A
-Iteration:   2%|▏         | 872/44333 [13:16:59<631:53:31, 52.34s/it][A
-Iteration:   2%|▏         | 873/44333 [13:17:48<619:19:58, 51.30s/it][A
-Iteration:   2%|▏         | 874/44333 [13:18:42<630:07:19, 52.20s/it][A
-Iteration:   2%|▏         | 875/44333 [13:19:33<624:55:21, 51.77s/it][A
-Iteration:   2%|▏         | 876/44333 [13:20:26<628:43:35, 52.08s/it][A
-Iteration:   2%|▏         | 877/44333 [13:21:15<618:03:13, 51.20s/it][A
-Iteration:   2%|▏         | 878/44333 [13:22:03<606:15:32, 50.23s/it][A
-Iteration:   2%|▏         | 879/44333 [13:22:53<606:49:39, 50.27s/it][A
-Iteration:   2%|▏         | 880/44333 [13:23:50<631:10:34, 52.29s/it][A
-Iteration:   2%|▏         | 881/44333 [13:24:46<642:33:58, 53.24s/it][A
-Iteration:   2%|▏         | 882/44333 [13:25:45<664:54:10, 55.09s/it][A
-Iteration:   2%|▏         | 883/44333 [13:26:41<668:43:27, 55.41s/it][A
-Iteration:   2%|▏         | 884/44333 [13:27:39<676:07:10, 56.02s/it][A
-Iteration:   2%|▏         | 885/44333 [13:28:29<656:49:43, 54.42s/it][A
-Iteration:   2%|▏         | 886/44333 [13:29:25<661:54:18, 54.85s/it][A
-Iteration:   2%|▏         | 887/44333 [13:30:20<662:03:33, 54.86s/it][A
-Iteration:   2%|▏         | 888/44333 [13:31:18<672:22:03, 55.71s/it][A
-Iteration:   2%|▏         | 889/44333 [13:32:11<663:39:07, 54.99s/it][A
-Iteration:   2%|▏         | 890/44333 [13:33:08<670:41:29, 55.58s/it][A
-Iteration:   2%|▏         | 891/44333 [13:34:02<663:25:55, 54.98s/it][A
-Iteration:   2%|▏         | 892/44333 [13:34:55<658:00:50, 54.53s/it][A
-Iteration:   2%|▏         | 893/44333 [13:35:53<668:53:24, 55.43s/it][A
-Iteration:   2%|▏         | 894/44333 [13:36:49<670:32:21, 55.57s/it][A
-Iteration:   2%|▏         | 895/44333 [13:37:43<668:14:53, 55.38s/it][A
-Iteration:   2%|▏         | 896/44333 [13:38:37<660:48:03, 54.77s/it][A
-Iteration:   2%|▏         | 897/44333 [13:39:30<655:53:49, 54.36s/it][A
-Iteration:   2%|▏         | 898/44333 [13:40:25<657:51:59, 54.53s/it][A
-Iteration:   2%|▏         | 899/44333 [13:41:17<647:08:23, 53.64s/it][A
-Iteration:   2%|▏         | 900/44333 [13:42:13<657:33:32, 54.50s/it][A
-Iteration:   2%|▏         | 901/44333 [13:43:09<662:42:20, 54.93s/it][A
-Iteration:   2%|▏         | 902/44333 [13:44:03<659:25:07, 54.66s/it][A
-Iteration:   2%|▏         | 903/44333 [13:45:00<667:32:37, 55.33s/it][A
-Iteration:   2%|▏         | 904/44333 [13:45:58<678:07:31, 56.21s/it][A
-Iteration:   2%|▏         | 905/44333 [13:46:51<664:43:28, 55.10s/it][A
-Iteration:   2%|▏         | 906/44333 [13:47:46<664:48:40, 55.11s/it][A
-Iteration:   2%|▏         | 907/44333 [13:48:42<668:37:55, 55.43s/it][A
-Iteration:   2%|▏         | 908/44333 [13:49:38<671:14:04, 55.65s/it][A
-Iteration:   2%|▏         | 909/44333 [13:50:30<655:35:55, 54.35s/it][A
-Iteration:   2%|▏         | 910/44333 [13:51:22<649:47:09, 53.87s/it][A
-Iteration:   2%|▏         | 911/44333 [13:52:13<638:58:13, 52.98s/it][A
-Iteration:   2%|▏         | 912/44333 [13:53:09<650:02:17, 53.89s/it][A
-Iteration:   2%|▏         | 913/44333 [13:54:01<643:35:24, 53.36s/it][A
-Iteration:   2%|▏         | 914/44333 [13:54:54<640:59:09, 53.15s/it][A
-Iteration:   2%|▏         | 915/44333 [13:55:52<657:40:10, 54.53s/it][A
-Iteration:   2%|▏         | 916/44333 [13:56:45<651:39:55, 54.03s/it][A
-Iteration:   2%|▏         | 917/44333 [13:57:35<636:15:03, 52.76s/it][A
-Iteration:   2%|▏         | 918/44333 [13:58:29<641:40:25, 53.21s/it][A
-Iteration:   2%|▏         | 919/44333 [13:59:19<630:13:05, 52.26s/it][A
-Iteration:   2%|▏         | 920/44333 [14:00:10<626:38:51, 51.96s/it][A
-Iteration:   2%|▏         | 921/44333 [14:01:02<626:32:20, 51.96s/it][A
-Iteration:   2%|▏         | 922/44333 [14:01:58<642:32:33, 53.28s/it][A
-Iteration:   2%|▏         | 923/44333 [14:02:50<636:04:45, 52.75s/it][A
-Iteration:   2%|▏         | 924/44333 [14:03:42<632:11:22, 52.43s/it][A
-Iteration:   2%|▏         | 925/44333 [14:04:34<632:10:34, 52.43s/it][A
-Iteration:   2%|▏         | 926/44333 [14:05:30<645:17:26, 53.52s/it][A
-Iteration:   2%|▏         | 927/44333 [14:06:20<633:09:07, 52.51s/it][A
-Iteration:   2%|▏         | 928/44333 [14:07:10<623:42:53, 51.73s/it][A
-Iteration:   2%|▏         | 929/44333 [14:08:04<632:21:57, 52.45s/it][A
-Iteration:   2%|▏         | 930/44333 [14:08:59<640:48:23, 53.15s/it][A
-Iteration:   2%|▏         | 931/44333 [14:09:51<634:34:44, 52.64s/it][A
-Iteration:   2%|▏         | 932/44333 [14:10:43<635:47:04, 52.74s/it][A
-Iteration:   2%|▏         | 933/44333 [14:11:37<637:47:45, 52.90s/it][A
-Iteration:   2%|▏         | 934/44333 [14:12:30<640:07:41, 53.10s/it][A
-Iteration:   2%|▏         | 935/44333 [14:13:22<634:24:29, 52.63s/it][A
-Iteration:   2%|▏         | 936/44333 [14:14:14<630:58:25, 52.34s/it][A
-Iteration:   2%|▏         | 937/44333 [14:15:08<640:22:56, 53.12s/it][A
-Iteration:   2%|▏         | 938/44333 [14:16:02<640:48:21, 53.16s/it][A
-Iteration:   2%|▏         | 939/44333 [14:16:55<642:32:56, 53.31s/it][A
-Iteration:   2%|▏         | 940/44333 [14:17:45<630:03:55, 52.27s/it][A
-Iteration:   2%|▏         | 941/44333 [14:18:35<621:22:57, 51.55s/it][A
-Iteration:   2%|▏         | 942/44333 [14:19:25<615:31:10, 51.07s/it][A
-Iteration:   2%|▏         | 943/44333 [14:20:16<615:30:30, 51.07s/it][A
-Iteration:   2%|▏         | 944/44333 [14:21:09<620:41:23, 51.50s/it][A
-Iteration:   2%|▏         | 945/44333 [14:22:02<629:02:28, 52.19s/it][A
-Iteration:   2%|▏         | 946/44333 [14:23:00<647:33:30, 53.73s/it][A
-Iteration:   2%|▏         | 947/44333 [14:23:54<649:48:43, 53.92s/it][A
-Iteration:   2%|▏         | 948/44333 [14:24:47<645:52:33, 53.59s/it][A
-Iteration:   2%|▏         | 949/44333 [14:25:44<659:06:32, 54.69s/it][A
-Iteration:   2%|▏         | 950/44333 [14:26:42<671:06:17, 55.69s/it][A
-Iteration:   2%|▏         | 951/44333 [14:27:37<666:48:54, 55.33s/it][A
-Iteration:   2%|▏         | 952/44333 [14:28:28<653:01:18, 54.19s/it][A
-Iteration:   2%|▏         | 953/44333 [14:29:21<649:01:13, 53.86s/it][A
-Iteration:   2%|▏         | 954/44333 [14:30:13<642:18:37, 53.30s/it][A
-Iteration:   2%|▏         | 955/44333 [14:31:09<649:52:16, 53.93s/it][A
-Iteration:   2%|▏         | 956/44333 [14:32:03<650:59:01, 54.03s/it][A
-Iteration:   2%|▏         | 957/44333 [14:32:57<651:22:27, 54.06s/it][A
-Iteration:   2%|▏         | 958/44333 [14:33:52<654:16:12, 54.30s/it][A
-Iteration:   2%|▏         | 959/44333 [14:34:49<664:27:29, 55.15s/it][A
-Iteration:   2%|▏         | 960/44333 [14:35:47<675:31:52, 56.07s/it][A
-Iteration:   2%|▏         | 961/44333 [14:36:41<665:25:09, 55.23s/it][A
-Iteration:   2%|▏         | 962/44333 [14:37:35<661:03:32, 54.87s/it][A
-Iteration:   2%|▏         | 963/44333 [14:38:29<658:28:16, 54.66s/it][A
-Iteration:   2%|▏         | 964/44333 [14:39:22<653:46:34, 54.27s/it][A
-Iteration:   2%|▏         | 965/44333 [14:40:12<637:33:58, 52.92s/it][A
-Iteration:   2%|▏         | 966/44333 [14:41:02<626:05:51, 51.97s/it][A
-Iteration:   2%|▏         | 967/44333 [14:41:55<632:06:19, 52.47s/it][A
-Iteration:   2%|▏         | 968/44333 [14:42:51<644:10:35, 53.48s/it][A
-Iteration:   2%|▏         | 969/44333 [14:43:48<657:05:52, 54.55s/it][A
-Iteration:   2%|▏         | 970/44333 [14:44:45<665:31:25, 55.25s/it][A
-Iteration:   2%|▏         | 971/44333 [14:45:45<683:03:16, 56.71s/it][A
-Iteration:   2%|▏         | 972/44333 [14:46:39<671:21:28, 55.74s/it][A
-Iteration:   2%|▏         | 973/44333 [14:47:34<668:12:14, 55.48s/it][A
-Iteration:   2%|▏         | 974/44333 [14:48:21<639:59:07, 53.14s/it][A
-Iteration:   2%|▏         | 975/44333 [14:49:15<643:55:55, 53.47s/it][A
-Iteration:   2%|▏         | 976/44333 [14:50:10<646:57:27, 53.72s/it][A
-Iteration:   2%|▏         | 977/44333 [14:51:08<664:07:06, 55.14s/it][A
-Iteration:   2%|▏         | 978/44333 [14:52:04<665:45:27, 55.28s/it][A
-Iteration:   2%|▏         | 979/44333 [14:52:59<666:48:17, 55.37s/it][A
-Iteration:   2%|▏         | 980/44333 [14:53:56<670:08:59, 55.65s/it][A
-Iteration:   2%|▏         | 981/44333 [14:54:49<662:52:16, 55.05s/it][A
-Iteration:   2%|▏         | 982/44333 [14:55:47<671:59:41, 55.80s/it][A
-Iteration:   2%|▏         | 983/44333 [14:56:40<661:08:13, 54.90s/it][A
-Iteration:   2%|▏         | 984/44333 [14:57:31<647:34:39, 53.78s/it][A
-Iteration:   2%|▏         | 985/44333 [14:58:27<655:13:31, 54.42s/it][A
-Iteration:   2%|▏         | 986/44333 [14:59:22<657:16:23, 54.59s/it][A
-Iteration:   2%|▏         | 987/44333 [15:00:19<666:33:04, 55.36s/it][A
-Iteration:   2%|▏         | 988/44333 [15:01:12<658:35:19, 54.70s/it][A
-Iteration:   2%|▏         | 989/44333 [15:02:10<669:19:53, 55.59s/it][A
-Iteration:   2%|▏         | 990/44333 [15:03:06<670:28:33, 55.69s/it][A
-Iteration:   2%|▏         | 991/44333 [15:04:01<670:09:13, 55.66s/it][A
-Iteration:   2%|▏         | 992/44333 [15:04:58<674:57:46, 56.06s/it][A
-Iteration:   2%|▏         | 993/44333 [15:05:56<680:38:04, 56.54s/it][A
-Iteration:   2%|▏         | 994/44333 [15:06:55<689:30:27, 57.27s/it][A
-Iteration:   2%|▏         | 995/44333 [15:07:55<701:22:35, 58.26s/it][A
-Iteration:   2%|▏         | 996/44333 [15:08:49<685:22:31, 56.93s/it][A
-Iteration:   2%|▏         | 997/44333 [15:09:43<673:43:02, 55.97s/it][A
-Iteration:   2%|▏         | 998/44333 [15:10:39<674:09:38, 56.01s/it][A
-Iteration:   2%|▏         | 999/44333 [15:11:33<667:47:17, 55.48s/it][A
-Iteration:   2%|▏         | 1000/44333 [15:12:29<669:47:08, 55.64s/it][A
-Iteration:   2%|▏         | 1001/44333 [15:13:25<669:48:36, 55.65s/it][A
-Iteration:   2%|▏         | 1002/44333 [15:14:15<650:47:22, 54.07s/it][A
-Iteration:   2%|▏         | 1003/44333 [15:15:08<646:25:16, 53.71s/it][A
-Iteration:   2%|▏         | 1004/44333 [15:16:03<651:24:28, 54.12s/it][A
-Iteration:   2%|▏         | 1005/44333 [15:16:59<655:22:57, 54.45s/it][A
-Iteration:   2%|▏         | 1006/44333 [15:17:53<654:19:42, 54.37s/it][A
-Iteration:   2%|▏         | 1007/44333 [15:18:43<638:17:08, 53.04s/it][A
-Iteration:   2%|▏         | 1008/44333 [15:19:35<633:53:33, 52.67s/it][A
-Iteration:   2%|▏         | 1009/44333 [15:20:30<645:34:21, 53.64s/it][A
-Iteration:   2%|▏         | 1010/44333 [15:21:32<674:29:20, 56.05s/it][A
-Iteration:   2%|▏         | 1011/44333 [15:22:28<673:29:49, 55.97s/it][A
-Iteration:   2%|▏         | 1012/44333 [15:23:21<663:06:13, 55.10s/it][A
-Iteration:   2%|▏         | 1013/44333 [15:24:16<663:26:26, 55.13s/it][A
-Iteration:   2%|▏         | 1014/44333 [15:25:12<664:55:36, 55.26s/it][A
-Iteration:   2%|▏         | 1015/44333 [15:26:06<660:16:55, 54.87s/it][A
-Iteration:   2%|▏         | 1016/44333 [15:27:00<657:19:42, 54.63s/it][Aslurmstepd: error: *** JOB 252007 ON guppy8 CANCELLED AT 2019-12-02T09:41:13 ***
