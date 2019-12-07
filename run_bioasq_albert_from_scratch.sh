@@ -14,7 +14,7 @@ python3 ./examples/run_squad_max.py \
     --weight_decay 0 \
     --beta1 0.9 \
     --beta2 0.98 \
-    --adam_epsilon 1e-8 \
+    --adam_epsilon 1e-4 \
     --lr_scheduler 'cosine' \
     --num_train_epochs 2 \
     --max_steps 5000 \
