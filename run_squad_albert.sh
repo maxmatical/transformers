@@ -11,7 +11,7 @@ python3 ./examples/run_squad_max.py \
     --version_2_with_negative \
     --train_file /scratch/gobi1/mtian/SQUAD/train-v2.0.json \
     --predict_file /scratch/gobi1/mtian/SQUAD/dev-v2.0.json \
-    --fp16
+    --fp16 \
     --learning_rate 3e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
