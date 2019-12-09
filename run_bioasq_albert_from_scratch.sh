@@ -17,9 +17,9 @@ python3 ./examples/run_squad_max.py \
     --adam_epsilon 1e-4 \
     --lr_scheduler 'cosine' \
     --num_train_epochs 2 \
-    --max_steps 5000 \
-    --save_steps 500 \
-    --warmup_steps 500 \
+    --max_steps 1000 \
+    --save_steps 100 \
+    --warmup_steps 100 \
     --max_seq_length 512 \
     --doc_stride 128 \
     --output_dir ./output/models/albert_bioasq_max_beta2_98_from_scratch/ \
