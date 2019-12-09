@@ -16,7 +16,6 @@ python3 ./examples/run_squad_max.py \
     --beta2 0.98 \
     --adam_epsilon 1e-4 \
     --lr_scheduler 'cosine' \
-    --num_train_epochs 2 \
     --max_steps 1000 \
     --save_steps 100 \
     --warmup_steps 100 \
