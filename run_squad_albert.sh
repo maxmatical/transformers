@@ -5,7 +5,7 @@
 #SBATCH -p nlp
 python3 ./examples/run_squad_max.py \
     --model_type albert \
-    --model_name_or_path albert-large-v2 \
+    --model_name_or_path albert-large-v1 \
     --do_train \
     --do_eval \
     --version_2_with_negative \
@@ -22,7 +22,7 @@ python3 ./examples/run_squad_max.py \
     --warmup_steps 814 \
     --max_seq_length 512 \
     --doc_stride 128 \
-    --output_dir ./output/models/albert_squad_max_beta2_98/ \
+    --output_dir ./output/models/albert_squad_max_beta2_98_v1/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
