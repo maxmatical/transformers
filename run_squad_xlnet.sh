@@ -24,6 +24,6 @@ python3 ./examples/run_squad_max.py \
     --doc_stride 128 \
     --output_dir ./output/models/xlnet_squad_max_beta2_98_v1/ \
     --overwrite_output_dir \
-    --gradient_accumulation_steps 8 \
-    --per_gpu_eval_batch_size=3   \
-    --per_gpu_train_batch_size=3   \
+    --gradient_accumulation_steps 24 \
+    --per_gpu_eval_batch_size=2   \
+    --per_gpu_train_batch_size=2   \
