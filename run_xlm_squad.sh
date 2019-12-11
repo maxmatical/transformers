@@ -4,23 +4,25 @@
 #SBATCH --gres=gpu:1
 #SBATCH -p nlp
 python3 ./examples/run_squad_max.py \
-    --model_type albert \
-    --model_name_or_path ./output/models/albert_squad_max_beta2_98/ \
+    --model_type xlm \
+    --model_name_or_path xlm-mlm-en-2048 \
     --do_train \
-    --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
-    --predict_file /scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json \
+    --do_eval \
+    --version_2_with_negative \
+    --train_file /scratch/gobi1/mtian/SQUAD/train-v2.0.json \
+    --predict_file /scratch/gobi1/mtian/SQUAD/dev-v2.0.json \
     --learning_rate 3e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
     --beta2 0.98 \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
-    --max_steps 1000 \
-    --save_steps 100 \
-    --warmup_steps 100 \
+    --max_steps 8144 \
+    --save_steps 500 \
+    --warmup_steps 814 \
     --max_seq_length 512 \
     --doc_stride 128 \
-    --output_dir ./output/models/albert_bioasq_max_beta2_98_from_squad_v2/ \
+    --output_dir ./output/models/xlm_squad_max_beta2_98_v1/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
