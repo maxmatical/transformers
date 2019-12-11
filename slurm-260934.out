@@ -1,0 +1,39 @@
+12/11/2019 10:05:18 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+12/11/2019 10:05:18 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-config.json from cache at /h/mtian/.cache/torch/transformers/a82c2c506ba12688420ce135fa48c03861b977b25b51839a5ad8942cb5f00eb2.11e77166a400dbd85ce1ab4d9d70181152d02a7c715d0f783e78e960b8fe797c
+12/11/2019 10:05:18 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "finetuning_task": null,
+  "gap_size": 0,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "net_structure_type": 0,
+  "num_attention_heads": 16,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_memory_blocks": 0,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30000
+}
+
+12/11/2019 10:05:18 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-spiece.model from cache at /h/mtian/.cache/torch/transformers/66f081790a7cd178fa9a63002d945aaed2d289c5fc14cb2fb1db322009485aaf.c81d4deb77aec08ce575b7a39a989a79dd54f321bfb82c2b54dd35f52f8182cf
+12/11/2019 10:05:18 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/05be68f9f3dfa693c90b4bd657e8ff7bc1ba6c709185b87862ac83dc0ed00c58.a2e503f03a19deb256cbf1d3284a638d77215ec1c890e77d70705d7b177b70c3
+12/11/2019 10:05:19 - INFO - transformers.modeling_utils -   Weights of AlbertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+12/11/2019 10:05:19 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in AlbertForQuestionAnswering: ['predictions.bias', 'predictions.LayerNorm.weight', 'predictions.LayerNorm.bias', 'predictions.dense.weight', 'predictions.dense.bias', 'predictions.decoder.weight', 'predictions.decoder.bias']
+12/11/2019 10:05:24 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cuda'), do_eval=True, do_lower_case=False, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, learning_rate=3e-05, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=512, max_steps=8144, model_name_or_path='albert-large-v1', model_type='albert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='./output/models/albert_squad_max_beta2_98_v1/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=3, per_gpu_train_batch_size=3, predict_file='/scratch/gobi1/mtian/SQUAD/dev-v2.0.json', save_steps=500, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/SQUAD/train-v2.0.json', verbose_logging=False, version_2_with_negative=True, warmup_steps=814, weight_decay=0.0)
+12/11/2019 10:05:24 - INFO - __main__ -   Creating features from dataset file at /scratch/gobi1/mtian/SQUAD/train-v2.0.json
