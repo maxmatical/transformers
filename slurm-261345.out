@@ -1,0 +1,120 @@
+12/12/2019 16:07:58 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+12/12/2019 16:07:58 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-config.json from cache at /h/mtian/.cache/torch/transformers/4f6b2675253400aebc8ab1673ec27add127daf362af404ae81bfc57880c04d85.4e4ae0b75092dc73403e23e1652c47d6f6ab1993188fa8862fb72b943ba13157
+12/12/2019 16:07:58 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "finetuning_task": null,
+  "gap_size": 0,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "net_structure_type": 0,
+  "num_attention_heads": 16,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_memory_blocks": 0,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30000
+}
+
+12/12/2019 16:07:58 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-spiece.model from cache at /h/mtian/.cache/torch/transformers/6a228bf1ddec144cf2e94c6c762dfce1b721a082cf98437db1c62172bbd4d6c3.c81d4deb77aec08ce575b7a39a989a79dd54f321bfb82c2b54dd35f52f8182cf
+12/12/2019 16:07:58 - WARNING - transformers.modeling_utils -   There is currently an upstream reproducibility issue with ALBERT v2 models. Please see https://github.com/google-research/google-research/issues/119 for more information.
+12/12/2019 16:07:58 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-v2-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/e6fd1be612c6797d1dc556e26724c9ed6ea0a45b79e3486533eccf9432a23ce6.857dc1dec4c7a7f2a7a0088f4139c2424ecc3d9a238f5c02de82f24a1eb69439
+12/12/2019 16:07:59 - INFO - transformers.modeling_utils -   Weights of AlbertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+12/12/2019 16:07:59 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in AlbertForQuestionAnswering: ['predictions.bias', 'predictions.LayerNorm.weight', 'predictions.LayerNorm.bias', 'predictions.dense.weight', 'predictions.dense.bias', 'predictions.decoder.weight', 'predictions.decoder.bias']
+12/12/2019 16:08:02 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cuda'), do_eval=True, do_lower_case=True, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, learning_rate=3e-05, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=512, max_steps=8144, model_name_or_path='albert-large-v2', model_type='albert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='./output/models/albert_squad_max_beta2_98_v2_lowercase/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=3, per_gpu_train_batch_size=3, predict_file='/scratch/gobi1/mtian/SQUAD/dev-v2.0.json', save_steps=500, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/SQUAD/train-v2.0.json', verbose_logging=False, version_2_with_negative=True, warmup_steps=814, weight_decay=0.0)
+12/12/2019 16:08:02 - INFO - __main__ -   Loading features from cached file /scratch/gobi1/mtian/SQUAD/cached_train_albert-large-v2_512
+12/12/2019 16:08:31 - INFO - __main__ -   ***** Running training *****
+12/12/2019 16:08:31 - INFO - __main__ -     Num examples = 132998
+12/12/2019 16:08:31 - INFO - __main__ -     Num Epochs = 3
+12/12/2019 16:08:31 - INFO - __main__ -     Instantaneous batch size per GPU = 3
+12/12/2019 16:08:31 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 48
+12/12/2019 16:08:31 - INFO - __main__ -     Gradient Accumulation steps = 16
+12/12/2019 16:08:31 - INFO - __main__ -     Total optimization steps = 8144
+Epoch:   0%|          | 0/3 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/44333 [00:00<?, ?it/s][A
+Iteration:   0%|          | 1/44333 [00:00<6:40:06,  1.85it/s][A
+Iteration:   0%|          | 2/44333 [00:00<6:21:35,  1.94it/s][A
+Iteration:   0%|          | 3/44333 [00:01<6:08:31,  2.00it/s][A
+Iteration:   0%|          | 4/44333 [00:01<5:59:36,  2.05it/s][A
+Iteration:   0%|          | 5/44333 [00:02<5:53:28,  2.09it/s][A
+Iteration:   0%|          | 6/44333 [00:02<5:49:12,  2.12it/s][A
+Iteration:   0%|          | 7/44333 [00:03<5:46:12,  2.13it/s][A
+Iteration:   0%|          | 8/44333 [00:03<5:44:18,  2.15it/s][A
+Iteration:   0%|          | 9/44333 [00:04<5:42:47,  2.16it/s][A
+Iteration:   0%|          | 10/44333 [00:04<5:41:51,  2.16it/s][A
+Iteration:   0%|          | 11/44333 [00:05<5:40:54,  2.17it/s][A
+Iteration:   0%|          | 12/44333 [00:05<5:40:32,  2.17it/s][A
+Iteration:   0%|          | 13/44333 [00:06<5:40:27,  2.17it/s][A
+Iteration:   0%|          | 14/44333 [00:06<5:40:17,  2.17it/s][A
+Iteration:   0%|          | 15/44333 [00:06<5:40:15,  2.17it/s][A
+Iteration:   0%|          | 16/44333 [00:07<5:41:30,  2.16it/s][A
+Iteration:   0%|          | 17/44333 [00:07<5:41:04,  2.17it/s][A
+Iteration:   0%|          | 18/44333 [00:08<5:40:48,  2.17it/s][A
+Iteration:   0%|          | 19/44333 [00:08<5:40:32,  2.17it/s][A
+Iteration:   0%|          | 20/44333 [00:09<5:40:46,  2.17it/s][A
+Iteration:   0%|          | 21/44333 [00:09<5:41:16,  2.16it/s][A
+Iteration:   0%|          | 22/44333 [00:10<5:40:58,  2.17it/s][A
+Iteration:   0%|          | 23/44333 [00:10<5:41:17,  2.16it/s][A
+Iteration:   0%|          | 24/44333 [00:11<5:40:55,  2.17it/s][A
+Iteration:   0%|          | 25/44333 [00:11<5:41:00,  2.17it/s][A
+Iteration:   0%|          | 26/44333 [00:12<5:40:30,  2.17it/s][A
+Iteration:   0%|          | 27/44333 [00:12<5:40:57,  2.17it/s][A
+Iteration:   0%|          | 28/44333 [00:12<5:40:52,  2.17it/s][A
+Iteration:   0%|          | 29/44333 [00:13<5:41:03,  2.16it/s][A
+Iteration:   0%|          | 30/44333 [00:13<5:41:31,  2.16it/s][A
+Iteration:   0%|          | 31/44333 [00:14<5:41:25,  2.16it/s][A
+Iteration:   0%|          | 32/44333 [00:14<5:43:05,  2.15it/s][A
+Iteration:   0%|          | 33/44333 [00:15<5:42:36,  2.16it/s][A
+Iteration:   0%|          | 34/44333 [00:15<5:42:34,  2.16it/s][A
+Iteration:   0%|          | 35/44333 [00:16<5:42:42,  2.15it/s][A
+Iteration:   0%|          | 36/44333 [00:16<5:42:30,  2.16it/s][A
+Iteration:   0%|          | 37/44333 [00:17<5:42:27,  2.16it/s][A
+Iteration:   0%|          | 38/44333 [00:17<5:42:21,  2.16it/s][A
+Iteration:   0%|          | 39/44333 [00:18<5:42:31,  2.16it/s][A
+Iteration:   0%|          | 40/44333 [00:18<5:42:35,  2.15it/s][A
+Iteration:   0%|          | 41/44333 [00:19<5:42:34,  2.15it/s][A
+Iteration:   0%|          | 42/44333 [00:19<5:42:39,  2.15it/s][A
+Iteration:   0%|          | 43/44333 [00:19<5:42:47,  2.15it/s][A
+Iteration:   0%|          | 44/44333 [00:20<5:43:08,  2.15it/s][A
+Iteration:   0%|          | 45/44333 [00:20<5:43:04,  2.15it/s][A
+Iteration:   0%|          | 46/44333 [00:21<5:43:25,  2.15it/s][A
+Iteration:   0%|          | 47/44333 [00:21<5:43:16,  2.15it/s][A
+Iteration:   0%|          | 48/44333 [00:22<5:44:05,  2.15it/s][A
+Iteration:   0%|          | 49/44333 [00:22<5:43:51,  2.15it/s][A
+Iteration:   0%|          | 50/44333 [00:23<5:43:54,  2.15it/s][A
+Iteration:   0%|          | 51/44333 [00:23<5:44:25,  2.14it/s][A
+Iteration:   0%|          | 52/44333 [00:24<5:44:07,  2.14it/s][A
+Iteration:   0%|          | 53/44333 [00:24<5:44:18,  2.14it/s][A
+Iteration:   0%|          | 54/44333 [00:25<5:44:11,  2.14it/s][A
+Iteration:   0%|          | 55/44333 [00:25<5:44:14,  2.14it/s][A
+Iteration:   0%|          | 56/44333 [00:26<5:44:18,  2.14it/s][A
+Iteration:   0%|          | 57/44333 [00:26<5:44:19,  2.14it/s][A
+Iteration:   0%|          | 58/44333 [00:26<5:44:22,  2.14it/s][A
+Iteration:   0%|          | 59/44333 [00:27<5:44:24,  2.14it/s][A
+Iteration:   0%|          | 60/44333 [00:27<5:44:21,  2.14it/s][A
+Iteration:   0%|          | 61/44333 [00:28<5:44:16,  2.14it/s][A
+Iteration:   0%|          | 62/44333 [00:28<5:44:13,  2.14it/s][A
+Iteration:   0%|          | 63/44333 [00:29<5:44:19,  2.14it/s][A
+Iteration:   0%|          | 64/44333 [00:29<5:45:20,  2.14it/s][A
+Iteration:   0%|          | 65/44333 [00:30<5:45:09,  2.14it/s][A
+Iteration:   0%|          | 66/44333 [00:30<5:45:07,  2.14it/s][A
+Iteration:   0%|          | 67/44333 [00:31<5:44:55,  2.14it/s][A
+Iteration:   0%|          | 68/44333 [00:31<5:44:57,  2.14it/s][A
+Iteration:   0%|          | 69/44333 [00:32<5:44:59,  2.14it/s][A
+Iteration:   0%|          | 70/44333 [00:32<5:45:01,  2.14it/s][A
+Iteration:   0%|          | 71/44333 [00:33<5:44:51,  2.14it/s][A
