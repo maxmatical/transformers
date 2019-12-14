@@ -15,7 +15,7 @@ python3 ./examples/run_squad_max.py \
     --learning_rate 3e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
-    --beta2 0.98 \
+    --beta2 0.999 \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
     --max_steps 8144 \
@@ -23,7 +23,7 @@ python3 ./examples/run_squad_max.py \
     --warmup_steps 814 \
     --max_seq_length 512 \
     --doc_stride 128 \
-    --output_dir ./output/models/albert_squad_max_beta2_98_v2_lowercase/ \
+    --output_dir ./output/models/albert_squad_max_beta2_999_v2_lowercase/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
