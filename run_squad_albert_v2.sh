@@ -17,13 +17,13 @@ python3 ./examples/run_squad_max.py \
     --beta1 0.9 \
     --beta2 0.999 \
     --adam_epsilon 1e-8 \
-    --lr_scheduler 'cosine' \
+    --lr_scheduler 'linear' \
     --max_steps 8144 \
     --save_steps 500 \
     --warmup_steps 814 \
     --max_seq_length 512 \
     --doc_stride 128 \
-    --output_dir ./output/models/albert_squad_max_beta2_999_v2_lowercase/ \
+    --output_dir ./output/models/albert_squad_max_beta2_999_v2_lowercase_linear/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=3   \
