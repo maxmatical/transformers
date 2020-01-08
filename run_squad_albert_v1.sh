@@ -17,7 +17,7 @@ python3 ./examples/run_squad_max.py \
     --beta1 0.9 \
     --beta2 0.98 \
     --adam_epsilon 1e-8 \
-    --lr_scheduler 'cosine' \
+    --lr_scheduler 'linear' \
     --max_steps 12216 \
     --save_steps 1200 \
     --warmup_steps 1221 \
