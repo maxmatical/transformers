@@ -1,0 +1,255 @@
+01/16/2020 10:47:47 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+01/16/2020 10:47:47 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-config.json from cache at /h/mtian/.cache/torch/transformers/a82c2c506ba12688420ce135fa48c03861b977b25b51839a5ad8942cb5f00eb2.11e77166a400dbd85ce1ab4d9d70181152d02a7c715d0f783e78e960b8fe797c
+01/16/2020 10:47:47 - INFO - transformers.configuration_utils -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "finetuning_task": null,
+  "gap_size": 0,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "net_structure_type": 0,
+  "num_attention_heads": 16,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_memory_blocks": 0,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30000
+}
+
+01/16/2020 10:47:47 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-spiece.model from cache at /h/mtian/.cache/torch/transformers/66f081790a7cd178fa9a63002d945aaed2d289c5fc14cb2fb1db322009485aaf.c81d4deb77aec08ce575b7a39a989a79dd54f321bfb82c2b54dd35f52f8182cf
+01/16/2020 10:47:47 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/albert-large-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/05be68f9f3dfa693c90b4bd657e8ff7bc1ba6c709185b87862ac83dc0ed00c58.a2e503f03a19deb256cbf1d3284a638d77215ec1c890e77d70705d7b177b70c3
+01/16/2020 10:47:48 - INFO - transformers.modeling_utils -   Weights of AlbertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+01/16/2020 10:47:48 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in AlbertForQuestionAnswering: ['predictions.bias', 'predictions.LayerNorm.weight', 'predictions.LayerNorm.bias', 'predictions.dense.weight', 'predictions.dense.bias', 'predictions.decoder.weight', 'predictions.decoder.bias']
+01/16/2020 10:47:53 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cuda'), do_eval=False, do_lower_case=False, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, learning_rate=3e-05, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=512, max_steps=1000, model_name_or_path='albert-large-v1', model_type='albert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='./output/models/albert_bioasq_max_beta2_98_from_scratch_v1/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=3, per_gpu_train_batch_size=3, predict_file='/scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json', save_steps=100, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json', verbose_logging=False, version_2_with_negative=False, warmup_steps=100, weight_decay=0.0)
+01/16/2020 10:47:53 - INFO - __main__ -   Loading features from cached file /scratch/gobi1/mtian/BioASQ/cached_train_albert-large-v1_512
+01/16/2020 10:47:54 - INFO - __main__ -   ***** Running training *****
+01/16/2020 10:47:54 - INFO - __main__ -     Num examples = 4542
+01/16/2020 10:47:54 - INFO - __main__ -     Num Epochs = 11
+01/16/2020 10:47:54 - INFO - __main__ -     Instantaneous batch size per GPU = 3
+01/16/2020 10:47:54 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 48
+01/16/2020 10:47:54 - INFO - __main__ -     Gradient Accumulation steps = 16
+01/16/2020 10:47:54 - INFO - __main__ -     Total optimization steps = 1000
+Epoch:   0%|          | 0/11 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/1514 [00:00<?, ?it/s][A
+Iteration:   0%|          | 1/1514 [00:00<15:26,  1.63it/s][A
+Iteration:   0%|          | 2/1514 [00:01<14:18,  1.76it/s][A
+Iteration:   0%|          | 3/1514 [00:01<13:31,  1.86it/s][A
+Iteration:   0%|          | 4/1514 [00:02<12:56,  1.94it/s][A
+Iteration:   0%|          | 5/1514 [00:02<12:33,  2.00it/s][A
+Iteration:   0%|          | 6/1514 [00:02<12:17,  2.05it/s][A
+Iteration:   0%|          | 7/1514 [00:03<12:06,  2.08it/s][A
+Iteration:   1%|          | 8/1514 [00:03<11:58,  2.10it/s][A
+Iteration:   1%|          | 9/1514 [00:04<11:52,  2.11it/s][A
+Iteration:   1%|          | 10/1514 [00:04<11:48,  2.12it/s][A
+Iteration:   1%|          | 11/1514 [00:05<11:45,  2.13it/s][A
+Iteration:   1%|          | 12/1514 [00:05<11:43,  2.13it/s][A
+Iteration:   1%|          | 13/1514 [00:06<11:41,  2.14it/s][A
+Iteration:   1%|          | 14/1514 [00:06<11:41,  2.14it/s][A
+Iteration:   1%|          | 15/1514 [00:07<11:40,  2.14it/s][A
+Iteration:   1%|          | 16/1514 [00:07<11:42,  2.13it/s][A
+Iteration:   1%|          | 17/1514 [00:08<11:41,  2.13it/s][A
+Iteration:   1%|          | 18/1514 [00:08<11:40,  2.14it/s][A
+Iteration:   1%|▏         | 19/1514 [00:09<11:39,  2.14it/s][A
+Iteration:   1%|▏         | 20/1514 [00:09<11:39,  2.14it/s][A
+Iteration:   1%|▏         | 21/1514 [00:09<11:39,  2.13it/s][A
+Iteration:   1%|▏         | 22/1514 [00:10<11:39,  2.13it/s][A
+Iteration:   2%|▏         | 23/1514 [00:10<11:38,  2.14it/s][A
+Iteration:   2%|▏         | 24/1514 [00:11<11:37,  2.14it/s][A
+Iteration:   2%|▏         | 25/1514 [00:11<11:37,  2.13it/s][A
+Iteration:   2%|▏         | 26/1514 [00:12<11:37,  2.13it/s][A
+Iteration:   2%|▏         | 27/1514 [00:12<11:36,  2.13it/s][A
+Iteration:   2%|▏         | 28/1514 [00:13<11:36,  2.13it/s][A
+Iteration:   2%|▏         | 29/1514 [00:13<11:36,  2.13it/s][A
+Iteration:   2%|▏         | 30/1514 [00:14<11:35,  2.13it/s][A
+Iteration:   2%|▏         | 31/1514 [00:14<11:36,  2.13it/s][A
+Iteration:   2%|▏         | 32/1514 [00:15<11:37,  2.12it/s][A
+Iteration:   2%|▏         | 33/1514 [00:15<11:36,  2.13it/s][A
+Iteration:   2%|▏         | 34/1514 [00:16<11:35,  2.13it/s][A
+Iteration:   2%|▏         | 35/1514 [00:16<11:34,  2.13it/s][A
+Iteration:   2%|▏         | 36/1514 [00:16<11:34,  2.13it/s][A
+Iteration:   2%|▏         | 37/1514 [00:17<11:33,  2.13it/s][A
+Iteration:   3%|▎         | 38/1514 [00:17<11:33,  2.13it/s][A
+Iteration:   3%|▎         | 39/1514 [00:18<11:33,  2.13it/s][A
+Iteration:   3%|▎         | 40/1514 [00:18<11:33,  2.13it/s][A
+Iteration:   3%|▎         | 41/1514 [00:19<11:32,  2.13it/s][A
+Iteration:   3%|▎         | 42/1514 [00:19<11:31,  2.13it/s][A
+Iteration:   3%|▎         | 43/1514 [00:20<11:31,  2.13it/s][A
+Iteration:   3%|▎         | 44/1514 [00:20<11:30,  2.13it/s][A
+Iteration:   3%|▎         | 45/1514 [00:21<11:30,  2.13it/s][A
+Iteration:   3%|▎         | 46/1514 [00:21<11:30,  2.13it/s][A
+Iteration:   3%|▎         | 47/1514 [00:22<11:30,  2.12it/s][A
+Iteration:   3%|▎         | 48/1514 [00:22<11:31,  2.12it/s][A
+Iteration:   3%|▎         | 49/1514 [00:23<11:31,  2.12it/s][A
+Iteration:   3%|▎         | 50/1514 [00:23<11:29,  2.12it/s][A
+Iteration:   3%|▎         | 51/1514 [00:24<11:30,  2.12it/s][A
+Iteration:   3%|▎         | 52/1514 [00:24<11:29,  2.12it/s][A
+Iteration:   4%|▎         | 53/1514 [00:24<11:28,  2.12it/s][A
+Iteration:   4%|▎         | 54/1514 [00:25<11:28,  2.12it/s][A
+Iteration:   4%|▎         | 55/1514 [00:25<11:27,  2.12it/s][A
+Iteration:   4%|▎         | 56/1514 [00:26<11:27,  2.12it/s][A
+Iteration:   4%|▍         | 57/1514 [00:26<11:28,  2.12it/s][A
+Iteration:   4%|▍         | 58/1514 [00:27<11:27,  2.12it/s][A
+Iteration:   4%|▍         | 59/1514 [00:27<11:27,  2.12it/s][A
+Iteration:   4%|▍         | 60/1514 [00:28<11:26,  2.12it/s][A
+Iteration:   4%|▍         | 61/1514 [00:28<11:26,  2.12it/s][A
+Iteration:   4%|▍         | 62/1514 [00:29<11:26,  2.12it/s][A
+Iteration:   4%|▍         | 63/1514 [00:29<11:26,  2.11it/s][A
+Iteration:   4%|▍         | 64/1514 [00:30<11:28,  2.11it/s][A
+Iteration:   4%|▍         | 65/1514 [00:30<11:26,  2.11it/s][A
+Iteration:   4%|▍         | 66/1514 [00:31<11:26,  2.11it/s][A
+Iteration:   4%|▍         | 67/1514 [00:31<11:25,  2.11it/s][A
+Iteration:   4%|▍         | 68/1514 [00:32<11:25,  2.11it/s][A
+Iteration:   5%|▍         | 69/1514 [00:32<11:25,  2.11it/s][A
+Iteration:   5%|▍         | 70/1514 [00:33<11:23,  2.11it/s][A
+Iteration:   5%|▍         | 71/1514 [00:33<11:24,  2.11it/s][A
+Iteration:   5%|▍         | 72/1514 [00:33<11:23,  2.11it/s][A
+Iteration:   5%|▍         | 73/1514 [00:34<11:23,  2.11it/s][A
+Iteration:   5%|▍         | 74/1514 [00:34<11:22,  2.11it/s][A
+Iteration:   5%|▍         | 75/1514 [00:35<11:21,  2.11it/s][A
+Iteration:   5%|▌         | 76/1514 [00:35<11:21,  2.11it/s][A
+Iteration:   5%|▌         | 77/1514 [00:36<11:20,  2.11it/s][A
+Iteration:   5%|▌         | 78/1514 [00:36<11:20,  2.11it/s][A
+Iteration:   5%|▌         | 79/1514 [00:37<11:20,  2.11it/s][A
+Iteration:   5%|▌         | 80/1514 [00:37<11:22,  2.10it/s][A
+Iteration:   5%|▌         | 81/1514 [00:38<11:21,  2.10it/s][A
+Iteration:   5%|▌         | 82/1514 [00:38<11:20,  2.10it/s][A
+Iteration:   5%|▌         | 83/1514 [00:39<11:19,  2.10it/s][A
+Iteration:   6%|▌         | 84/1514 [00:39<11:19,  2.10it/s][A
+Iteration:   6%|▌         | 85/1514 [00:40<11:18,  2.10it/s][A
+Iteration:   6%|▌         | 86/1514 [00:40<11:18,  2.11it/s][A
+Iteration:   6%|▌         | 87/1514 [00:41<11:17,  2.11it/s][A
+Iteration:   6%|▌         | 88/1514 [00:41<11:17,  2.11it/s][A
+Iteration:   6%|▌         | 89/1514 [00:42<11:17,  2.10it/s][A
+Iteration:   6%|▌         | 90/1514 [00:42<11:16,  2.10it/s][A
+Iteration:   6%|▌         | 91/1514 [00:42<11:16,  2.10it/s][A
+Iteration:   6%|▌         | 92/1514 [00:43<11:16,  2.10it/s][A
+Iteration:   6%|▌         | 93/1514 [00:43<11:15,  2.10it/s][A
+Iteration:   6%|▌         | 94/1514 [00:44<11:15,  2.10it/s][A
+Iteration:   6%|▋         | 95/1514 [00:44<11:15,  2.10it/s][A
+Iteration:   6%|▋         | 96/1514 [00:45<11:16,  2.09it/s][A
+Iteration:   6%|▋         | 97/1514 [00:45<11:15,  2.10it/s][A
+Iteration:   6%|▋         | 98/1514 [00:46<11:14,  2.10it/s][A
+Iteration:   7%|▋         | 99/1514 [00:46<11:14,  2.10it/s][A
+Iteration:   7%|▋         | 100/1514 [00:47<11:13,  2.10it/s][A
+Iteration:   7%|▋         | 101/1514 [00:47<11:13,  2.10it/s][A
+Iteration:   7%|▋         | 102/1514 [00:48<11:12,  2.10it/s][A
+Iteration:   7%|▋         | 103/1514 [00:48<11:12,  2.10it/s][A
+Iteration:   7%|▋         | 104/1514 [00:49<11:11,  2.10it/s][A
+Iteration:   7%|▋         | 105/1514 [00:49<11:11,  2.10it/s][A
+Iteration:   7%|▋         | 106/1514 [00:50<11:10,  2.10it/s][A
+Iteration:   7%|▋         | 107/1514 [00:50<11:10,  2.10it/s][A
+Iteration:   7%|▋         | 108/1514 [00:51<11:10,  2.10it/s][A
+Iteration:   7%|▋         | 109/1514 [00:51<11:09,  2.10it/s][A
+Iteration:   7%|▋         | 110/1514 [00:52<11:09,  2.10it/s][A
+Iteration:   7%|▋         | 111/1514 [00:52<11:09,  2.10it/s][A
+Iteration:   7%|▋         | 112/1514 [00:53<11:11,  2.09it/s][A
+Iteration:   7%|▋         | 113/1514 [00:53<11:09,  2.09it/s][A
+Iteration:   8%|▊         | 114/1514 [00:53<11:09,  2.09it/s][A
+Iteration:   8%|▊         | 115/1514 [00:54<11:08,  2.09it/s][A
+Iteration:   8%|▊         | 116/1514 [00:54<11:07,  2.09it/s][A
+Iteration:   8%|▊         | 117/1514 [00:55<11:06,  2.10it/s][A
+Iteration:   8%|▊         | 118/1514 [00:55<11:06,  2.09it/s][A
+Iteration:   8%|▊         | 119/1514 [00:56<11:06,  2.09it/s][A
+Iteration:   8%|▊         | 120/1514 [00:56<11:05,  2.09it/s][A
+Iteration:   8%|▊         | 121/1514 [00:57<11:05,  2.09it/s][A
+Iteration:   8%|▊         | 122/1514 [00:57<11:04,  2.09it/s][A
+Iteration:   8%|▊         | 123/1514 [00:58<11:04,  2.09it/s][A
+Iteration:   8%|▊         | 124/1514 [00:58<11:04,  2.09it/s][A
+Iteration:   8%|▊         | 125/1514 [00:59<11:03,  2.09it/s][A
+Iteration:   8%|▊         | 126/1514 [00:59<11:04,  2.09it/s][A
+Iteration:   8%|▊         | 127/1514 [01:00<11:03,  2.09it/s][A
+Iteration:   8%|▊         | 128/1514 [01:00<11:05,  2.08it/s][A
+Iteration:   9%|▊         | 129/1514 [01:01<11:03,  2.09it/s][A
+Iteration:   9%|▊         | 130/1514 [01:01<11:03,  2.09it/s][A
+Iteration:   9%|▊         | 131/1514 [01:02<11:02,  2.09it/s][A
+Iteration:   9%|▊         | 132/1514 [01:02<11:02,  2.09it/s][A
+Iteration:   9%|▉         | 133/1514 [01:03<11:02,  2.08it/s][A
+Iteration:   9%|▉         | 134/1514 [01:03<11:01,  2.09it/s][A
+Iteration:   9%|▉         | 135/1514 [01:04<11:00,  2.09it/s][A
+Iteration:   9%|▉         | 136/1514 [01:04<11:00,  2.09it/s][A
+Iteration:   9%|▉         | 137/1514 [01:04<11:00,  2.09it/s][A
+Iteration:   9%|▉         | 138/1514 [01:05<10:59,  2.09it/s][A
+Iteration:   9%|▉         | 139/1514 [01:05<10:58,  2.09it/s][A
+Iteration:   9%|▉         | 140/1514 [01:06<10:58,  2.09it/s][A
+Iteration:   9%|▉         | 141/1514 [01:06<10:58,  2.09it/s][A
+Iteration:   9%|▉         | 142/1514 [01:07<10:57,  2.09it/s][A
+Iteration:   9%|▉         | 143/1514 [01:07<10:57,  2.09it/s][A
+Iteration:  10%|▉         | 144/1514 [01:08<10:59,  2.08it/s][A
+Iteration:  10%|▉         | 145/1514 [01:08<10:57,  2.08it/s][A
+Iteration:  10%|▉         | 146/1514 [01:09<10:56,  2.08it/s][A
+Iteration:  10%|▉         | 147/1514 [01:09<10:55,  2.08it/s][A
+Iteration:  10%|▉         | 148/1514 [01:10<10:55,  2.08it/s][A
+Iteration:  10%|▉         | 149/1514 [01:10<10:54,  2.08it/s][A
+Iteration:  10%|▉         | 150/1514 [01:11<10:54,  2.09it/s][A
+Iteration:  10%|▉         | 151/1514 [01:11<10:53,  2.08it/s][A
+Iteration:  10%|█         | 152/1514 [01:12<10:53,  2.09it/s][A
+Iteration:  10%|█         | 153/1514 [01:12<10:52,  2.08it/s][A
+Iteration:  10%|█         | 154/1514 [01:13<10:52,  2.09it/s][A
+Iteration:  10%|█         | 155/1514 [01:13<10:52,  2.08it/s][A
+Iteration:  10%|█         | 156/1514 [01:14<10:51,  2.08it/s][A
+Iteration:  10%|█         | 157/1514 [01:14<10:51,  2.08it/s][A
+Iteration:  10%|█         | 158/1514 [01:15<10:50,  2.08it/s][A
+Iteration:  11%|█         | 159/1514 [01:15<10:50,  2.08it/s][A
+Iteration:  11%|█         | 160/1514 [01:16<10:52,  2.08it/s][A
+Iteration:  11%|█         | 161/1514 [01:16<10:50,  2.08it/s][A
+Iteration:  11%|█         | 162/1514 [01:16<10:50,  2.08it/s][A
+Iteration:  11%|█         | 163/1514 [01:17<10:49,  2.08it/s][A
+Iteration:  11%|█         | 164/1514 [01:17<10:49,  2.08it/s][A
+Iteration:  11%|█         | 165/1514 [01:18<10:48,  2.08it/s][A
+Iteration:  11%|█         | 166/1514 [01:18<10:47,  2.08it/s][A
+Iteration:  11%|█         | 167/1514 [01:19<10:47,  2.08it/s][A
+Iteration:  11%|█         | 168/1514 [01:19<10:46,  2.08it/s][A
+Iteration:  11%|█         | 169/1514 [01:20<10:45,  2.08it/s][A
+Iteration:  11%|█         | 170/1514 [01:20<10:45,  2.08it/s][A
+Iteration:  11%|█▏        | 171/1514 [01:21<10:45,  2.08it/s][A
+Iteration:  11%|█▏        | 172/1514 [01:21<10:45,  2.08it/s][A
+Iteration:  11%|█▏        | 173/1514 [01:22<10:44,  2.08it/s][A
+Iteration:  11%|█▏        | 174/1514 [01:22<10:43,  2.08it/s][A
+Iteration:  12%|█▏        | 175/1514 [01:23<10:43,  2.08it/s][A
+Iteration:  12%|█▏        | 176/1514 [01:23<10:45,  2.07it/s][A
+Iteration:  12%|█▏        | 177/1514 [01:24<10:44,  2.08it/s][A
+Iteration:  12%|█▏        | 178/1514 [01:24<10:43,  2.08it/s][A
+Iteration:  12%|█▏        | 179/1514 [01:25<10:42,  2.08it/s][A
+Iteration:  12%|█▏        | 180/1514 [01:25<10:41,  2.08it/s][A
+Iteration:  12%|█▏        | 181/1514 [01:26<10:41,  2.08it/s][A
+Iteration:  12%|█▏        | 182/1514 [01:26<10:40,  2.08it/s][A
+Iteration:  12%|█▏        | 183/1514 [01:27<10:39,  2.08it/s][A
+Iteration:  12%|█▏        | 184/1514 [01:27<10:39,  2.08it/s][A
+Iteration:  12%|█▏        | 185/1514 [01:28<10:39,  2.08it/s][A
+Iteration:  12%|█▏        | 186/1514 [01:28<10:39,  2.08it/s][A
+Iteration:  12%|█▏        | 187/1514 [01:28<10:38,  2.08it/s][A
+Iteration:  12%|█▏        | 188/1514 [01:29<10:37,  2.08it/s][A
+Iteration:  12%|█▏        | 189/1514 [01:29<10:36,  2.08it/s][A
+Iteration:  13%|█▎        | 190/1514 [01:30<10:36,  2.08it/s][A
+Iteration:  13%|█▎        | 191/1514 [01:30<10:36,  2.08it/s][A
+Iteration:  13%|█▎        | 192/1514 [01:31<10:38,  2.07it/s][A
+Iteration:  13%|█▎        | 193/1514 [01:31<10:37,  2.07it/s][A
+Iteration:  13%|█▎        | 194/1514 [01:32<10:36,  2.07it/s][A
+Iteration:  13%|█▎        | 195/1514 [01:32<10:35,  2.08it/s][A
+Iteration:  13%|█▎        | 196/1514 [01:33<10:34,  2.08it/s][A
+Iteration:  13%|█▎        | 197/1514 [01:33<10:34,  2.08it/s][A
+Iteration:  13%|█▎        | 198/1514 [01:34<10:33,  2.08it/s][A
+Iteration:  13%|█▎        | 199/1514 [01:34<10:33,  2.08it/s][A
+Iteration:  13%|█▎        | 200/1514 [01:35<10:32,  2.08it/s][A
+Iteration:  13%|█▎        | 201/1514 [01:35<10:31,  2.08it/s][A
+Iteration:  13%|█▎        | 202/1514 [01:36<10:31,  2.08it/s][A
+Iteration:  13%|█▎        | 203/1514 [01:36<10:30,  2.08it/s][A
+Iteration:  13%|█▎        | 204/1514 [01:37<10:30,  2.08it/s][A
+Iteration:  14%|█▎        | 205/1514 [01:37<10:30,  2.08it/s][A
+Iteration:  14%|█▎        | 206/1514 [01:38<10:29,  2.08it/s][A
+Iteration:  14%|█▎        | 207/1514 [01:38<10:29,  2.08it/s][Aslurmstepd: error: *** JOB 342814 ON guppy6 CANCELLED AT 2020-01-16T10:49:33 ***
