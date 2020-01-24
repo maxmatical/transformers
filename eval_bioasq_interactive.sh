@@ -1,9 +1,4 @@
-#!/bin/bash
-#SBATCH --mem=12G
-#SBATCH -c 2
-#SBATCH --gres=gpu:1
-#SBATCH -p nlp
-
+srun --mem=12G -c 2 --gres=gpu:1 -p interactive --pty bash
 python3 ./examples/run_squad_max.py \
    --model_type albert \
    --model_name_or_path ./output/models/bioasq_albert_v2_lre3-5/ \
