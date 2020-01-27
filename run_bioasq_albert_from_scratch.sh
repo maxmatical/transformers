@@ -10,7 +10,7 @@ python3 ./examples/run_squad_max.py \
     --do_lower_case \
     --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
     --predict_file /scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json \
-    --learning_rate 5e-5 \
+    --learning_rate 3e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
     --beta2 0.98 \
