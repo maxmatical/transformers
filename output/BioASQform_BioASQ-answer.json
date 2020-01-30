@@ -1,0 +1,862 @@
+{
+  "questions": [
+    {
+      "type": "factoid",
+      "id": "56c073fcef6e394741000020",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "\u03b1-synuclein,"
+        ],
+        [
+          "heterologous expression of human \u03b1-synuclein,"
+        ],
+        [
+          "human \u03b1-synuclein,"
+        ],
+        [
+          "\u03b1-synuclein, which is thought to be the principal toxic trigger"
+        ],
+        [
+          "spermidine inhibited loss"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56b76d916e3f8eaf4c000001",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Flavivirus, family Flaviviridae)"
+        ],
+        [
+          "Flavivirus,"
+        ],
+        [
+          "genus Flavivirus, family Flaviviridae)"
+        ],
+        [
+          "genus Flavivirus,"
+        ],
+        [
+          "Flavivirus, family"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56afe6d40a360a5e45000017",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "CAGEr,"
+        ],
+        [
+          "CAGEr:"
+        ],
+        [
+          "(CAGE)"
+        ],
+        [
+          "r"
+        ],
+        [
+          "we present CAGEr,"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c3184050c68dd416000003",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "antihypertensive treatment with isradipine as monotherapy"
+        ],
+        [
+          "antihypertensive"
+        ],
+        [
+          "therapy"
+        ],
+        [
+          "antihypertensive therapy"
+        ],
+        [
+          "Isradipine monotherapy"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56b397a98525abca1e000003",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "lipid droplets (LDs)"
+        ],
+        [
+          "(LDs)"
+        ],
+        [
+          "(LD)"
+        ],
+        [
+          "triacylglycerol and package them into cytoplasmic lipid droplets (LDs)."
+        ],
+        [
+          "oleic-acid-fed primary glial cells."
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c1f00cef6e39474100003e",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "peroxisome proliferator-activated receptor-\u03b1/\u03b3"
+        ],
+        [
+          "\u03b1/\u03b3"
+        ],
+        [
+          "\u03b1"
+        ],
+        [
+          "peroxisome"
+        ],
+        [
+          "Aleglitazar"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56b330bb39c782df06000001",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Sushi.R, an R/Bioconductor"
+        ],
+        [
+          "Sushi.R,"
+        ],
+        [
+          "R/Bioconductor"
+        ],
+        [
+          "Sushi.R, an R/Bioconductor package"
+        ],
+        [
+          "Sushi.R, an"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cafa845795f9a73e00002e",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "mTORC1,"
+        ],
+        [
+          "mTORC1, in coordination with mTORC2,"
+        ],
+        [
+          "mTORC2,"
+        ],
+        [
+          "mTOR"
+        ],
+        [
+          "mTOR pathway"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56b76f496e3f8eaf4c000002",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "SAGA (Spt-Ada-Gcn5 acetyltransferase)"
+        ],
+        [
+          "SAGA,"
+        ],
+        [
+          "SAGA"
+        ],
+        [
+          "(SAGA)"
+        ],
+        [
+          "Spt-Ada-Gcn5 acetyltransferase (SAGA)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c1f00def6e39474100003f",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(sPLA2)"
+        ],
+        [
+          "Lp-PLA(2)"
+        ],
+        [
+          "non-IL-6-dependent"
+        ],
+        [
+          "A-002"
+        ],
+        [
+          "A-002 (varespladib) to treat patients with coronary artery disease. Indeed, A-002"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c85ed65795f9a73e000012",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Dasatinib"
+        ],
+        [
+          "Dasatinib,"
+        ],
+        [
+          "Dasatinib (BMS-354825) is a small molecule Src/Abl"
+        ],
+        [
+          "dasatinib and staurosporine"
+        ],
+        [
+          "BCR-ABL/SRC"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c1f010ef6e394741000041",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "STATA\u00ae"
+        ],
+        [
+          "spinal meningioma,"
+        ],
+        [
+          "(I-II"
+        ],
+        [
+          "Simpson grade: an opportunity to reassess the need for complete resection of meningiomas."
+        ],
+        [
+          "Simpson grade:"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cf36263975bb303a000007",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(Geospiza fortis),"
+        ],
+        [
+          "hypertelorism,"
+        ],
+        [
+          "chondrosarcoma"
+        ],
+        [
+          "Tbx15,"
+        ],
+        [
+          "Mutations"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c1f01aef6e394741000043",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(PD-1)"
+        ],
+        [
+          "anti-PD-1"
+        ],
+        [
+          "anti-programmed death 1"
+        ],
+        [
+          "anti programmed cell death-1 (PD-1)"
+        ],
+        [
+          "Ipilimumab"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cae60f5795f9a73e00002b",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(SCA2)"
+        ],
+        [
+          "(SCA2)."
+        ],
+        [
+          "Ataxin-2"
+        ],
+        [
+          "polyglutamine (polyQ) tract."
+        ],
+        [
+          "polyglutamine"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cf3f4f3975bb303a000008",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "monoamine oxidase type A"
+        ],
+        [
+          "monoamine oxidase"
+        ],
+        [
+          "Human monoamine oxidase"
+        ],
+        [
+          "A"
+        ],
+        [
+          "monoamine oxidase type A (MAO-A) has been used to determine the chromosomal location"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c58ceeb04e159d0e000004",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "fungi"
+        ],
+        [
+          "circle."
+        ],
+        [
+          "microRNA (miRNA)"
+        ],
+        [
+          "splicing"
+        ],
+        [
+          "(miRNA)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56caea805795f9a73e00002c",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "mTORC1"
+        ],
+        [
+          "SLC38A9"
+        ],
+        [
+          "SLC38A9 as a novel component of the Rag-Ragulator complex. SLC38A9"
+        ],
+        [
+          "(mTORC1)"
+        ],
+        [
+          "SLC38A9."
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c5fd325795f9a73e000005",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "SMN1"
+        ],
+        [
+          "(SMN1)"
+        ],
+        [
+          "(SMN1)."
+        ],
+        [
+          "SMN,"
+        ],
+        [
+          "dominant"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56d1e23c67f0cb3d66000009",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(YAP)/TAZ"
+        ],
+        [
+          "Yap and Taz,"
+        ],
+        [
+          "YAP and TAZ"
+        ],
+        [
+          "TEAD-interacting"
+        ],
+        [
+          "Vgll1"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56bb68f9ac7ad1001900000b",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Pthirus pubis"
+        ],
+        [
+          "P. pubis"
+        ],
+        [
+          "Pediculosis capitis"
+        ],
+        [
+          "blepharitis."
+        ],
+        [
+          "phthirus pubis."
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c8274f5795f9a73e00000d",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "microglia,"
+        ],
+        [
+          "motoneuronal cell line,"
+        ],
+        [
+          "(SOD1)"
+        ],
+        [
+          "two types of cultured cells."
+        ],
+        [
+          "cells."
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cae3eb5795f9a73e000021",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "<17 years"
+        ],
+        [
+          "54.9"
+        ],
+        [
+          "age"
+        ],
+        [
+          "> 60"
+        ],
+        [
+          "older ages"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56d3346cf22319765a000008",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "left ventricular shear"
+        ],
+        [
+          "Acute myocardial infarction"
+        ],
+        [
+          "INTRODUCTION: Situs inversus totalis"
+        ],
+        [
+          "autosomal recessive"
+        ],
+        [
+          "(SIT)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56bc751eac7ad10019000013",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Bazex syndrome"
+        ],
+        [
+          "Bazex"
+        ],
+        [
+          "(Bazex syndrome):"
+        ],
+        [
+          "Bazex?]. Acrokeratosis paraneoplastica Bazex"
+        ],
+        [
+          "Bazex syndrome revisited. Acrokeratosis paraneoplastica of Bazex"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56cb9b065795f9a73e000032",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "aurora A"
+        ],
+        [
+          "aurora A kinase,"
+        ],
+        [
+          "Aurora A kinase"
+        ],
+        [
+          "Aurora A kinase activity in vitro. In human cells however, only Tripolin A acted as an Aurora A"
+        ],
+        [
+          "Aurora"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c865d25795f9a73e000016",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "DN"
+        ],
+        [
+          "NADPH oxidase"
+        ],
+        [
+          "NAD(P)H oxidase"
+        ],
+        [
+          "NAD(P)H oxidase activity were increased in SHR. Basal NAD(P)H oxidase"
+        ],
+        [
+          "GKT136901, a specific inhibitor of Nox1- and Nox4-containing NADPH oxidase"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c83f365795f9a73e000011",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "'prion domain'"
+        ],
+        [
+          "PrLDs"
+        ],
+        [
+          "N-terminal prion-like domain"
+        ],
+        [
+          "prion-like domains,"
+        ],
+        [
+          "the prion domains"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56af9f130a360a5e45000015",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(Panx1)"
+        ],
+        [
+          "ATP"
+        ],
+        [
+          "(zfPanx1)"
+        ],
+        [
+          "(Panx1)."
+        ],
+        [
+          "(Panx2)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56bc7d71ac7ad10019000018",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "MDR-Tb"
+        ],
+        [
+          "MDR-TB."
+        ],
+        [
+          "multidrug-resistant tuberculosis (MDR-TB)"
+        ],
+        [
+          "anti-Tb"
+        ],
+        [
+          "MDR-TB,"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56d19a363975bb303a000017",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(MTBP)"
+        ],
+        [
+          "MTBP"
+        ],
+        [
+          "(MTBP) as"
+        ],
+        [
+          "protein (MTBP)"
+        ],
+        [
+          "(TopBP1-interacting, replication stimulating protein/TopBP1-interacting,"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c86aa95795f9a73e000018",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "(PGI(2))"
+        ],
+        [
+          "(PGI2)"
+        ],
+        [
+          "MIP-1\u03b1"
+        ],
+        [
+          "treprostinil"
+        ],
+        [
+          "PGI(2) analogues (iloprost, treprostinil"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56bc9268ac7ad1001900001b",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "anti-interleukin-17"
+        ],
+        [
+          "IL-17"
+        ],
+        [
+          "anti-IL-17"
+        ],
+        [
+          "IL17A"
+        ],
+        [
+          "IL17A inhibitors secukinumab and ixekizumab, the IL17A"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c3320a50c68dd416000008",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Denmark"
+        ],
+        [
+          "1:2000."
+        ],
+        [
+          "Cystic fibrosis"
+        ],
+        [
+          "Finland"
+        ],
+        [
+          "Pakistani"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56bc932aac7ad1001900001c",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "CD38"
+        ],
+        [
+          "CD38."
+        ],
+        [
+          "IgG1\u03ba"
+        ],
+        [
+          "kappa immunoglobulin"
+        ],
+        [
+          "CD38,"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "569e7721ceceede94d000001",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Mammalian Genomes 4 (FANTOM4)"
+        ],
+        [
+          "Mammalian Genomes 4"
+        ],
+        [
+          "Mammalian Genomes 4 (FANTOM4) research"
+        ],
+        [
+          "Functional Annotation Of the Mammalian Genomes 4 (FANTOM4)"
+        ],
+        [
+          "(FANTOM4)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56c341acfedd0b786b000001",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "interstrand"
+        ],
+        [
+          "8-(omega-diethyl aminopropyloxy)psoralen hydrochloride (I)"
+        ],
+        [
+          "3,4'-dimethyl-8-methoxypsoralen)."
+        ],
+        [
+          "(8-methoxypsoralen and 3,4'-dimethyl-8-methoxypsoralen)."
+        ],
+        [
+          "aminopropyloxy)psoralen hydrochloride (I)"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56a39d60496b62f23f000006",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "r3Cseq,"
+        ],
+        [
+          "r3Cseq:"
+        ],
+        [
+          "r3Cseq, an R/Bioconductor package designed to perform 3C-seq"
+        ],
+        [
+          "r3Cseq, an R/Bioconductor package"
+        ],
+        [
+          "We present r3Cseq,"
+        ]
+      ]
+    },
+    {
+      "type": "factoid",
+      "id": "56b7083376d8bf8d13000001",
+      "ideal_answer": "Dummy",
+      "exact_answer": [
+        [
+          "Panama"
+        ],
+        [
+          "(FOC),"
+        ],
+        [
+          "fungi"
+        ],
+        [
+          "(Foc1)"
+        ],
+        [
+          "Fusarium oxysporum f. sp. cubense (Foc), the causal agent of Fusarium wilt"
+        ]
+      ]
+    }
+  ]
+}
