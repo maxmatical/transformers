@@ -2,6 +2,10 @@
 srun --mem=12G -c 2 --gres=gpu:1 -p interactive --pty bash
 
 #2 
+# models can be bioasq_albertx or biosaq_bert models
+# change model type, model path, and output_dir
+
+
 python3 ./examples/run_squad_max.py \
    --model_type albert \
    --model_name_or_path ./output/models/bioasq_albert_v2_lre3-5/ \
@@ -14,7 +18,7 @@ python3 ./examples/run_squad_max.py \
    --save_steps 30000 \
    --max_seq_length 384 \
    --doc_stride 128 \
-   --output_dir ./output/models/bioasq_albert_v2_lre3-5/ \
+   --output_dir ./output/models/bioasq_albertx_v2_lre3-5/ \
    --overwrite_output_dir \
    --gradient_accumulation_steps 6 \
    --per_gpu_eval_batch_size=2

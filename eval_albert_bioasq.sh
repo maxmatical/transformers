@@ -6,7 +6,7 @@
 
 python3 ./examples/run_squad_max.py \
    --model_type albert \
-   --model_name_or_path ./output/models/bioasq_albert_v2_lre3-5/ \
+   --model_name_or_path ./output/models/bioasq_albertx_v2_lre3-5/ \
    --do_eval \
    --do_lower_case \
    --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
