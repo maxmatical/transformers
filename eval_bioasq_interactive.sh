@@ -25,6 +25,7 @@ python3 ./examples/run_squad_max.py \
 
 
 #3
+# change nbest_path here
 python3 transform_nbset2bioasqform.py --nbest_path=./output/models/bioasq_albert_v2_lre3-5/nbest_predictions_.json --output_path=./
 
 # 4
@@ -32,7 +33,11 @@ python3 transform_nbset2bioasqform.py --nbest_path=./output/models/bioasq_albert
 # move output to /scratch/gobi1/mtian/
 # /scratch/gobi1/mtian/BioASQform_BioASQ-answer.json (path to file)
 # /scratch/gobi1/mtian/BioASQ (path to bioasq)
+
+
+# path to transformers for BioASQ-golden
+# use output_path in step 3 for BioASQform_BioASQ-answer.json
 cd Evaluation-Measures
 java -Xmx10G -cp $CLASSPATH:./flat/BioASQEvaluation/dist/BioASQEvaluation.jar evaluation.EvaluatorTask1b -phaseB -e 5 \
-    ./BioASQ/4B1_golden.json \
+    /h/mtian/transformers/BioASQ-golden/4B1_golden.json \
     ./BioASQform_BioASQ-answer.json

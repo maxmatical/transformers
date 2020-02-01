@@ -19,7 +19,7 @@ python3 ./examples/run_squad_max.py \
     --num_train_epochs 2 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir ./output/models/bioasq_bert_lre3-5/ \
+    --output_dir /scratch/gobi1/mtian/models/bioasq_bert_lre3-5/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \
