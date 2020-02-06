@@ -4,11 +4,12 @@ srun --mem=12G -c 2 --gres=gpu:1 -p interactive --pty bash
 #2 
 # models can be bioasq_albertx or biosaq_bert models
 # change model type, model path, and output_dir
-
+# bioasq_bert_lre3-5
+# /scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/
 
 python3 ./examples/run_squad_max.py \
-   --model_type albert \
-   --model_name_or_path ./output/models/bioasq_albert_v2_lre3-5/ \
+   --model_type bert \
+   --model_name_or_path /scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/ \
    --do_eval \
    --do_lower_case \
    --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
@@ -18,7 +19,7 @@ python3 ./examples/run_squad_max.py \
    --save_steps 30000 \
    --max_seq_length 384 \
    --doc_stride 128 \
-   --output_dir ./output/models/bioasq_albertx_v2_lre3-5/ \
+   --output_dir /scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/ \
    --overwrite_output_dir \
    --gradient_accumulation_steps 6 \
    --per_gpu_eval_batch_size=2
@@ -26,7 +27,7 @@ python3 ./examples/run_squad_max.py \
 
 #3
 # change nbest_path here
-python3 transform_nbset2bioasqform.py --nbest_path=./output/models/bioasq_albert_v2_lre3-5/nbest_predictions_.json --output_path=./
+python3 transform_nbset2bioasqform.py --nbest_path=/scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5//nbest_predictions_.json --output_path=/scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/
 
 # 4
 # /h/mtian/Evaluation-Measures
@@ -40,4 +41,11 @@ python3 transform_nbset2bioasqform.py --nbest_path=./output/models/bioasq_albert
 cd Evaluation-Measures
 java -Xmx10G -cp $CLASSPATH:./flat/BioASQEvaluation/dist/BioASQEvaluation.jar evaluation.EvaluatorTask1b -phaseB -e 5 \
     /h/mtian/transformers/BioASQ-golden/4B1_golden.json \
-    ./BioASQform_BioASQ-answer.json
+    /scratch/gobi1/mtian/models/bioasq_bert_lre3-5/BioASQform_BioASQ-answer.json
+
+
+#optional
+# scp file from mars to local 
+# exit ssh first
+
+scp mtian@q.vectorinstitute.ai:/scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/BioASQform_BioASQ-answer.json BioASQform_BioASQ-answer.json 
