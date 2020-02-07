@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --mem=12G
 #SBATCH -c 2
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH -p nlp
 python3 ./examples/run_squad_max.py \
     --model_type albert \
