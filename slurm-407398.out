@@ -1,0 +1,132 @@
+02/12/2020 11:21:31 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 1, distributed training: False, 16-bits training: False
+02/12/2020 11:21:31 - INFO - transformers.configuration_utils -   loading configuration file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/config.json
+02/12/2020 11:21:31 - INFO - transformers.configuration_utils -   Model config {
+  "architectures": [
+    "AlbertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "finetuning_task": null,
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 8192,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "net_structure_type": 0,
+  "num_attention_heads": 16,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_memory_blocks": 0,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30000
+}
+
+02/12/2020 11:21:31 - INFO - transformers.tokenization_utils -   Model name '/scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/' not found in model shortcut name list (albert-base-v1, albert-large-v1, albert-xlarge-v1, albert-xxlarge-v1, albert-base-v2, albert-large-v2, albert-xlarge-v2, albert-xxlarge-v2). Assuming '/scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/' is a path or url to a directory containing tokenizer files.
+02/12/2020 11:21:31 - INFO - transformers.tokenization_utils -   loading file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/spiece.model
+02/12/2020 11:21:31 - INFO - transformers.tokenization_utils -   loading file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/added_tokens.json
+02/12/2020 11:21:31 - INFO - transformers.tokenization_utils -   loading file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/special_tokens_map.json
+02/12/2020 11:21:31 - INFO - transformers.tokenization_utils -   loading file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/tokenizer_config.json
+02/12/2020 11:21:31 - INFO - transformers.modeling_utils -   loading weights file /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/pytorch_model.bin
+02/12/2020 11:21:36 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cuda'), do_eval=False, do_lower_case=True, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=16, learning_rate=5e-06, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=384, max_steps=-1, model_name_or_path='/scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/', model_type='albert', n_best_size=20, n_gpu=1, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=4.0, output_dir='/scratch/gobi1/mtian/models/bioasq_albertx_v2_4epoch_lr5e-6_sq/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=2, per_gpu_train_batch_size=2, predict_file='/scratch/gobi1/mtian/BioASQ/BioASQ-test-factoid-4b-1.json', save_steps=1000, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json', verbose_logging=False, version_2_with_negative=False, warmup_steps=0, weight_decay=0.0)
+02/12/2020 11:21:36 - INFO - __main__ -   Loading features from cached file /scratch/gobi1/mtian/BioASQ/cached_train_albertx_squad_max_beta2_98_lr_5e-5_384
+02/12/2020 11:21:37 - INFO - __main__ -   ***** Running training *****
+02/12/2020 11:21:37 - INFO - __main__ -     Num examples = 5692
+02/12/2020 11:21:37 - INFO - __main__ -     Num Epochs = 4
+02/12/2020 11:21:37 - INFO - __main__ -     Instantaneous batch size per GPU = 2
+02/12/2020 11:21:37 - INFO - __main__ -     Total train batch size (w. parallel, distributed & accumulation) = 32
+02/12/2020 11:21:37 - INFO - __main__ -     Gradient Accumulation steps = 16
+02/12/2020 11:21:37 - INFO - __main__ -     Total optimization steps = 708
+Epoch:   0%|          | 0/4 [00:00<?, ?it/s]
+Iteration:   0%|          | 0/2846 [00:00<?, ?it/s][A
+Iteration:   0%|          | 1/2846 [00:00<34:54,  1.36it/s][A
+Iteration:   0%|          | 2/2846 [00:01<34:25,  1.38it/s][A
+Iteration:   0%|          | 3/2846 [00:02<34:08,  1.39it/s][A
+Iteration:   0%|          | 4/2846 [00:02<33:56,  1.40it/s][A
+Iteration:   0%|          | 5/2846 [00:03<33:48,  1.40it/s][A
+Iteration:   0%|          | 6/2846 [00:04<33:44,  1.40it/s][A
+Iteration:   0%|          | 7/2846 [00:04<33:36,  1.41it/s][A
+Iteration:   0%|          | 8/2846 [00:05<33:36,  1.41it/s][A
+Iteration:   0%|          | 9/2846 [00:06<33:33,  1.41it/s][A
+Iteration:   0%|          | 10/2846 [00:07<33:32,  1.41it/s][A
+Iteration:   0%|          | 11/2846 [00:07<33:29,  1.41it/s][A
+Iteration:   0%|          | 12/2846 [00:08<33:29,  1.41it/s][A
+Iteration:   0%|          | 13/2846 [00:09<33:29,  1.41it/s][A
+Iteration:   0%|          | 14/2846 [00:09<33:28,  1.41it/s][A
+Iteration:   1%|          | 15/2846 [00:10<33:28,  1.41it/s][A
+Iteration:   1%|          | 16/2846 [00:11<33:36,  1.40it/s][A
+Iteration:   1%|          | 17/2846 [00:12<33:34,  1.40it/s][A
+Iteration:   1%|          | 18/2846 [00:12<33:33,  1.40it/s][A
+Iteration:   1%|          | 19/2846 [00:13<33:31,  1.41it/s][A
+Iteration:   1%|          | 20/2846 [00:14<33:29,  1.41it/s][A
+Iteration:   1%|          | 21/2846 [00:14<33:28,  1.41it/s][A
+Iteration:   1%|          | 22/2846 [00:15<33:27,  1.41it/s][A
+Iteration:   1%|          | 23/2846 [00:16<33:24,  1.41it/s][A
+Iteration:   1%|          | 24/2846 [00:17<33:24,  1.41it/s][A
+Iteration:   1%|          | 25/2846 [00:17<33:24,  1.41it/s][A
+Iteration:   1%|          | 26/2846 [00:18<33:23,  1.41it/s][A
+Iteration:   1%|          | 27/2846 [00:19<33:26,  1.40it/s][A
+Iteration:   1%|          | 28/2846 [00:19<33:25,  1.41it/s][A
+Iteration:   1%|          | 29/2846 [00:20<33:27,  1.40it/s][A
+Iteration:   1%|          | 30/2846 [00:21<33:27,  1.40it/s][A
+Iteration:   1%|          | 31/2846 [00:22<33:28,  1.40it/s][A
+Iteration:   1%|          | 32/2846 [00:22<33:33,  1.40it/s][A
+Iteration:   1%|          | 33/2846 [00:23<33:39,  1.39it/s][A
+Iteration:   1%|          | 34/2846 [00:24<33:36,  1.39it/s][A
+Iteration:   1%|          | 35/2846 [00:24<33:34,  1.40it/s][A
+Iteration:   1%|▏         | 36/2846 [00:25<33:32,  1.40it/s][A
+Iteration:   1%|▏         | 37/2846 [00:26<33:29,  1.40it/s][A
+Iteration:   1%|▏         | 38/2846 [00:27<33:30,  1.40it/s][A
+Iteration:   1%|▏         | 39/2846 [00:27<33:27,  1.40it/s][A
+Iteration:   1%|▏         | 40/2846 [00:28<33:29,  1.40it/s][A
+Iteration:   1%|▏         | 41/2846 [00:29<33:26,  1.40it/s][A
+Iteration:   1%|▏         | 42/2846 [00:29<33:28,  1.40it/s][A
+Iteration:   2%|▏         | 43/2846 [00:30<33:27,  1.40it/s][A
+Iteration:   2%|▏         | 44/2846 [00:31<33:25,  1.40it/s][A
+Iteration:   2%|▏         | 45/2846 [00:32<33:27,  1.40it/s][A
+Iteration:   2%|▏         | 46/2846 [00:32<33:26,  1.40it/s][A
+Iteration:   2%|▏         | 47/2846 [00:33<33:25,  1.40it/s][A
+Iteration:   2%|▏         | 48/2846 [00:34<33:31,  1.39it/s][A
+Iteration:   2%|▏         | 49/2846 [00:34<33:34,  1.39it/s][A
+Iteration:   2%|▏         | 50/2846 [00:35<33:31,  1.39it/s][A
+Iteration:   2%|▏         | 51/2846 [00:36<33:26,  1.39it/s][A
+Iteration:   2%|▏         | 52/2846 [00:37<33:27,  1.39it/s][A
+Iteration:   2%|▏         | 53/2846 [00:37<33:26,  1.39it/s][A
+Iteration:   2%|▏         | 54/2846 [00:38<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 55/2846 [00:39<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 56/2846 [00:39<33:25,  1.39it/s][A
+Iteration:   2%|▏         | 57/2846 [00:40<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 58/2846 [00:41<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 59/2846 [00:42<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 60/2846 [00:42<33:21,  1.39it/s][A
+Iteration:   2%|▏         | 61/2846 [00:43<33:20,  1.39it/s][A
+Iteration:   2%|▏         | 62/2846 [00:44<33:19,  1.39it/s][A
+Iteration:   2%|▏         | 63/2846 [00:45<33:18,  1.39it/s][A
+Iteration:   2%|▏         | 64/2846 [00:45<33:25,  1.39it/s][A
+Iteration:   2%|▏         | 65/2846 [00:46<33:27,  1.39it/s][A
+Iteration:   2%|▏         | 66/2846 [00:47<33:25,  1.39it/s][A
+Iteration:   2%|▏         | 67/2846 [00:47<33:23,  1.39it/s][A
+Iteration:   2%|▏         | 68/2846 [00:48<33:25,  1.39it/s][A
+Iteration:   2%|▏         | 69/2846 [00:49<33:24,  1.39it/s][A
+Iteration:   2%|▏         | 70/2846 [00:50<33:23,  1.39it/s][A
+Iteration:   2%|▏         | 71/2846 [00:50<33:20,  1.39it/s][A
+Iteration:   3%|▎         | 72/2846 [00:51<33:19,  1.39it/s][A
+Iteration:   3%|▎         | 73/2846 [00:52<33:18,  1.39it/s][A
+Iteration:   3%|▎         | 74/2846 [00:52<33:16,  1.39it/s][A
+Iteration:   3%|▎         | 75/2846 [00:53<33:17,  1.39it/s][A
+Iteration:   3%|▎         | 76/2846 [00:54<33:15,  1.39it/s][A
+Iteration:   3%|▎         | 77/2846 [00:55<33:17,  1.39it/s][A
+Iteration:   3%|▎         | 78/2846 [00:55<33:17,  1.39it/s][A
+Iteration:   3%|▎         | 79/2846 [00:56<33:20,  1.38it/s][A
