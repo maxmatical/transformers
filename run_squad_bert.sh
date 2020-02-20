@@ -13,7 +13,7 @@ python3 ./examples/run_squad_max.py \
     --train_file /scratch/gobi1/mtian/SQUAD/train-v1.1.json \
     --predict_file /scratch/gobi1/mtian/SQUAD/dev-v1.1.json \
     --learning_rate 3e-5 \
-    --weight_decay 0 \
+    --weight_decay 0.01 \
     --beta1 0.9 \
     --beta2 0.98 \
     --adam_epsilon 1e-8 \
