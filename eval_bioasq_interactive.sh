@@ -49,3 +49,8 @@ java -Xmx10G -cp $CLASSPATH:./flat/BioASQEvaluation/dist/BioASQEvaluation.jar ev
 # exit ssh first
 
 scp mtian@q.vectorinstitute.ai:/scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/BioASQform_BioASQ-answer.json BioASQform_BioASQ-answer_albert_sq_bioasq_5epoch.json 
+
+# tensorboard
+scp -r mtian@q.vectorinstitute.ai:/h/mtian/transformers/runs tensorboard_logs
+
+tensorboard --logdir tensorboard_logs --host=127.0.0.1

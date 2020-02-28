@@ -9,7 +9,6 @@ python3 ./examples/run_squad_max.py \
     --do_train \
     --do_eval \
     --do_lower_case \
-    --version_2_with_negative \
     --train_file /scratch/gobi1/mtian/SQUAD/train-v1.1.json \
     --predict_file /scratch/gobi1/mtian/SQUAD/dev-v1.1.json \
     --learning_rate 3e-5 \
