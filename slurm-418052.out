@@ -1,0 +1,33 @@
+02/28/2020 12:02:18 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+02/28/2020 12:02:18 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased-whole-word-masking-config.json from cache at /h/mtian/.cache/torch/transformers/acdf0fd9c7a1b157516c5c0434216c72438b384fb6ddeeaa20d67e83d1fef81f.fc076a4d5f1edf25ea3a2bd66e9f6f295dcd64c81dfef5b3f5a3eb2a82751ad1
+02/28/2020 12:02:18 - INFO - transformers.configuration_utils -   Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+
+02/28/2020 12:02:18 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased-whole-word-masking-vocab.txt from cache at /h/mtian/.cache/torch/transformers/b3a6b2c6d7ea2ffa06d0e7577c1e88b94fad470ae0f060a4ffef3fe0bdf86730.542ce4285a40d23a559526243235df47c5f75c197f04f37d1a0c124c32c9a084
+02/28/2020 12:02:19 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-large-uncased-whole-word-masking-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/66cc7a7501e3499efedc37e47b3a613e0d3d8d0a51c66224c69f0c669b52dcfb.ae11cc7f2a26b857b76b404a908c7abad793f88bf8ad95caecff154da87994b1
+02/28/2020 12:02:27 - INFO - transformers.modeling_utils -   Weights of BertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+02/28/2020 12:02:27 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in BertForQuestionAnswering: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias']
