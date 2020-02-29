@@ -8,8 +8,8 @@ srun --mem=12G -c 2 --gres=gpu:1 -p interactive --pty bash
 # /scratch/gobi1/mtian/models/bert_squad_max_beta2_98_lr_3e-5/
 
 python3 ./examples/run_squad_max.py \
-   --model_type albert \
-   --model_name_or_path /scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/ \
+   --model_type bert \
+   --model_name_or_path /scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/ \
    --do_eval \
    --do_lower_case \
    --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
@@ -19,7 +19,7 @@ python3 ./examples/run_squad_max.py \
    --save_steps 30000 \
    --max_seq_length 384 \
    --doc_stride 128 \
-   --output_dir /scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/ \
+   --output_dir /scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/ \
    --overwrite_output_dir \
    --gradient_accumulation_steps 6 \
    --per_gpu_eval_batch_size=2
@@ -27,7 +27,7 @@ python3 ./examples/run_squad_max.py \
 
 #3
 # change nbest_path here
-python3 transform_nbset2bioasqform.py --nbest_path=/scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/nbest_predictions_.json --output_path=/scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/
+python3 transform_nbset2bioasqform.py --nbest_path=/scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/nbest_predictions_.json --output_path=/scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/
 
 # 4
 # /h/mtian/Evaluation-Measures
@@ -48,7 +48,7 @@ java -Xmx10G -cp $CLASSPATH:./flat/BioASQEvaluation/dist/BioASQEvaluation.jar ev
 # scp file from mars to local 
 # exit ssh first
 
-scp mtian@q.vectorinstitute.ai:/scratch/gobi1/mtian/models/bioasq_albertx_v2_5epoch_lr5e-6_sq/BioASQform_BioASQ-answer.json BioASQform_BioASQ-answer_albert_sq_bioasq_5epoch.json 
+scp mtian@q.vectorinstitute.ai:/scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/BioASQform_BioASQ-answer.json BioASQform_BioASQ-answer_bert_sq_2epoch.json 
 
 # tensorboard
 scp -r mtian@q.vectorinstitute.ai:/h/mtian/transformers/runs tensorboard_logs

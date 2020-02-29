@@ -18,6 +18,7 @@ python3 ./examples/run_squad_max.py \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
     --num_train_epochs 2 \
+    --save_steps 1000 \
     --max_seq_length 384 \
     --doc_stride 128 \
     --output_dir /scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5/ \
