@@ -21,7 +21,7 @@ python3 ./examples/run_squad_max.py \
     --save_steps 2000 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir /scratch/gobi1/mtian/models/bioasq_bert_6epoch_lre5-6_sq/ \
+    --output_dir /scratch/gobi1/mtian/models/bioasq_bert_6epoch_lre5-6_sq_warmup/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \

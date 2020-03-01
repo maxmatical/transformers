@@ -17,12 +17,12 @@ python3 ./examples/run_squad_max.py \
     --beta2 0.98 \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
-    --max_steps 8144 \
-    --warmup_steps 489 \
+    --max_steps 2750 \
+    --warmup_steps 165 \
     --save_steps 1000 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir /scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5_steps/ \
+    --output_dir /scratch/gobi1/mtian/models/bert_squadv1_max_beta2_98_lr_3e-5_warmup/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \
