@@ -5,7 +5,7 @@
 #SBATCH -p nlp
 python3 ./examples/run_squad_max.py \
     --model_type albert \
-    --model_name_or_path /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/\
+    --model_name_or_path /scratch/gobi1/mtian/models/albert_squadv1_max_beta2_98_lr_5e-5/ \
     --do_train \
     --do_lower_case \
     --train_file /scratch/gobi1/mtian/BioASQ/BioASQ-train-factoid-4b.json  \
@@ -20,7 +20,7 @@ python3 ./examples/run_squad_max.py \
     --save_steps 1000 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir /scratch/gobi1/mtian/models/bioasq_albertx_v2_6epoch_lr5e-6_sq/ \
+    --output_dir /scratch/gobi1/mtian/models/bioasq_albert_6epoch_lre5-6_sq/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \

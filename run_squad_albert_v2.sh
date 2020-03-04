@@ -9,9 +9,8 @@ python3 ./examples/run_squad_max.py \
     --do_train \
     --do_eval \
     --do_lower_case \
-    --version_2_with_negative \
-    --train_file /scratch/gobi1/mtian/SQUAD/train-v2.0.json \
-    --predict_file /scratch/gobi1/mtian/SQUAD/dev-v2.0.json \
+    --train_file /scratch/gobi1/mtian/SQUAD/train-v1.1.json \
+    --predict_file /scratch/gobi1/mtian/SQUAD/dev-v1.1.json \
     --learning_rate 5e-5 \
     --weight_decay 0 \
     --beta1 0.9 \
@@ -19,9 +18,10 @@ python3 ./examples/run_squad_max.py \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
     --num_train_epochs 2 \
+    --save_steps 1000 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir /scratch/gobi1/mtian/models/albertx_squad_max_beta2_98_lr_5e-5/ \
+    --output_dir /scratch/gobi1/mtian/models/albert_squadv1_max_beta2_98_lr_5e-5/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \
