@@ -1,0 +1,44 @@
+03/05/2020 10:52:37 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+03/05/2020 10:52:37 - INFO - transformers.configuration_utils -   loading configuration file https://s3.amazonaws.com/models.huggingface.co/bert/albert-xlarge-v2-config.json from cache at /h/mtian/.cache/torch/transformers/a1cbd52b6a24c283740550c3bf4d5ed26697a73a6d1d332362721c447fe43351.b91c5f7f3d47cf161b639824ebb1dd90fd356951c0fd3201c8f2a41f2994bf0b
+03/05/2020 10:52:37 - INFO - transformers.configuration_utils -   Model config {
+  "architectures": [
+    "AlbertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0,
+  "down_scale_factor": 1,
+  "embedding_size": 128,
+  "finetuning_task": null,
+  "gap_size": 0,
+  "hidden_act": "gelu_new",
+  "hidden_dropout_prob": 0,
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "inner_group_num": 1,
+  "intermediate_size": 8192,
+  "is_decoder": false,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "net_structure_type": 0,
+  "num_attention_heads": 16,
+  "num_hidden_groups": 1,
+  "num_hidden_layers": 24,
+  "num_labels": 2,
+  "num_memory_blocks": 0,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30000
+}
+
+03/05/2020 10:52:37 - INFO - transformers.tokenization_utils -   loading file https://s3.amazonaws.com/models.huggingface.co/bert/albert-xlarge-v2-spiece.model from cache at /h/mtian/.cache/torch/transformers/02112eba687f794948810d2215028e9a0e77585b966ac59854a8d73e2d344d0b.c81d4deb77aec08ce575b7a39a989a79dd54f321bfb82c2b54dd35f52f8182cf
+03/05/2020 10:52:37 - WARNING - transformers.modeling_utils -   There is currently an upstream reproducibility issue with ALBERT v2 models. Please see https://github.com/google-research/google-research/issues/119 for more information.
+03/05/2020 10:52:37 - INFO - transformers.modeling_utils -   loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/albert-xlarge-v2-pytorch_model.bin from cache at /h/mtian/.cache/torch/transformers/fe2e5dacb488afc55fe7271641d78880c1e266b549861fa545118e54ff6df9a5.6d16c2a53c86e103e95956fac9f7e14c3c74dccf63ed4b635e3de273fbdaeb9f
+03/05/2020 10:52:39 - INFO - transformers.modeling_utils -   Weights of AlbertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.weight', 'qa_outputs.bias']
+03/05/2020 10:52:39 - INFO - transformers.modeling_utils -   Weights from pretrained model not used in AlbertForQuestionAnswering: ['predictions.bias', 'predictions.LayerNorm.weight', 'predictions.LayerNorm.bias', 'predictions.dense.weight', 'predictions.dense.bias', 'predictions.decoder.weight', 'predictions.decoder.bias']
+03/05/2020 10:52:42 - INFO - __main__ -   Training/evaluation parameters Namespace(adam_epsilon=1e-08, beta1=0.9, beta2=0.98, cache_dir='', config_name='', device=device(type='cuda'), do_eval=True, do_lower_case=True, do_train=True, doc_stride=128, eval_all_checkpoints=False, evaluate_during_training=False, fp16=False, fp16_opt_level='O1', gradient_accumulation_steps=24, learning_rate=3e-05, local_rank=-1, logging_steps=50, lr_scheduler='cosine', max_answer_length=30, max_grad_norm=1.0, max_query_length=64, max_seq_length=384, max_steps=-1, model_name_or_path='albert-xlarge-v2', model_type='albert', n_best_size=20, n_gpu=2, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='/scratch/gobi1/mtian/models/albert_squadv1_max_beta2_98_lr_3e-5/', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=2, per_gpu_train_batch_size=2, predict_file='/scratch/gobi1/mtian/SQUAD/dev-v1.1.json', save_steps=1000, seed=42, server_ip='', server_port='', tokenizer_name='', train_file='/scratch/gobi1/mtian/SQUAD/train-v1.1.json', verbose_logging=False, version_2_with_negative=False, warmup_steps=0, weight_decay=0.0)
+03/05/2020 10:52:42 - INFO - __main__ -   Loading features from cached file /scratch/gobi1/mtian/SQUAD/cached_train_albert-xlarge-v2_384
+slurmstepd: error: *** JOB 426850 ON guppy8 CANCELLED AT 2020-03-05T10:52:57 ***
