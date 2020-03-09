@@ -16,11 +16,11 @@ python3 ./examples/run_squad_max.py \
     --beta2 0.98 \
     --adam_epsilon 1e-8 \
     --lr_scheduler 'cosine' \
-    --num_train_epochs 3  \
+    --num_train_epochs 20  \
     --save_steps 1000 \
     --max_seq_length 384 \
     --doc_stride 128 \
-    --output_dir /scratch/gobi1/mtian/models/bioasq_bert_3epoch_lre5-6_sq/ \
+    --output_dir /scratch/gobi1/mtian/models/bioasq_bert_20epoch_lre5-6_sq/ \
     --overwrite_output_dir \
     --gradient_accumulation_steps 16 \
     --per_gpu_eval_batch_size=2   \
